@@ -1,0 +1,12 @@
+{
+  "name": "ultrax",
+  "version": "1.0.9",
+  "description": "This package is used to make stuff easier by using simple functions, its not fully released yet!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "UltraX#9586",
+  "license": "ISC",
+  "dependencies": {}
+}
