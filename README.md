@@ -30,6 +30,7 @@ The available functions are:
 
 - [**sleep**](https://www.npmjs.com/package/ultrax#sleep) - Function to set timeouts easily
 - [**passGen**](https://www.npmjs.com/package/ultrax#passGen) - Function to create passwords made by words and numbers randomly with specified length
+- [**bin**](https://www.npmjs.com/package/ultrax#bin) - This is a way to bin a code.
 
 ----
 
@@ -76,7 +77,7 @@ console.log(passGen(6)) // passGen(6) that mean it will generate a password from
 This is a way to bin a code.
 ```js
 const ultrax = require('ultrax')
-if (!args.join(' ')) return message.channel.send('What do you wnat to bin?');
+if (!args.join(' ')) return message.channel.send('What do you want to bin?');
 else {
     const bin = await ultrax.bin(args.join(' '));
     message.channel.send('Here i binned the code ' + bin)
