@@ -4,7 +4,7 @@ module.exports = async () => {
     if (require('../package.json').version !== packageData['dist-tags'].latest) {
         console.log('\n\n')
         console.log('\x1b[32m' + '---------------------------------------------------')
-        console.log('\x1b[32m' + '| @ ultrax                        - [] X |')
+        console.log('\x1b[32m' + '| @ ultrax                                 - [] X |')
         console.log('\x1b[32m' + '---------------------------------------------------')
         console.log('\x1b[33m' + `|            The module is\x1b[31m out of date!\x1b[33m           |`)
         console.log('\x1b[35m' + '|             New version is available!           |')

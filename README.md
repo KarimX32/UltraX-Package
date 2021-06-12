@@ -86,8 +86,9 @@ else {
 This event is for logging invite uses. This is same as `guildMemberAdd` event but this is custom event which has invite and inviter in it.
 ```js
 const ultrax = require("ultrax")
-// To Get The new event working we nee dto initilize it by:
+// To Get The new event working we need to initilize it by:
 ultrax.inviteLogger(client)
+// without above code event won't trigger.
 // now below event will work
 client.on('inviteJoin', (member, invite, inviter) => {
     console.log(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`)
