@@ -1,5 +1,5 @@
 function sleep(milliseconds) {
-    if(!milliseconds) throw new TypeError("Time isn't specified")
+    if (!milliseconds) throw new TypeError("Time isn't specified")
     const date = Date.now();
     let currentDate = null;
     do {
@@ -7,4 +7,9 @@ function sleep(milliseconds) {
     } while (currentDate - date < milliseconds);
 }
 
-module.exports =  sleep;
+module.exports = sleep;
+
+/**
+ * const wait = require('util').promisify(setTimeout)
+ * wait(5000)
+ */

@@ -1,12 +1,14 @@
 {
   "name": "ultrax",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "This package is used to make stuff easier by using simple functions, its not fully released yet!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd ExampleBot && npm i ../ && node ."
   },
   "author": "UltraX#9586",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }

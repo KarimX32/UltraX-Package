@@ -9,6 +9,7 @@ module.exports = async (code) => {
         body: params,
         method: 'post'
     }).then(r => {
+        console.log( r.text())
         return r.text()
     });
 }

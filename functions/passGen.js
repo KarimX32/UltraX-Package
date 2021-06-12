@@ -1,5 +1,5 @@
 function passGen(Length) {
-    if(!Length) throw new TypeError("Length isn't specified")
+    if (!Length) throw new TypeError("Length isn't specified")
     var length = Length,
         res = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
         value = "";
@@ -9,4 +9,4 @@ function passGen(Length) {
     return value;
 }
 
-module.exports =  passGen;
+module.exports = passGen;
