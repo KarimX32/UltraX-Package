@@ -1,5 +1,5 @@
 {
-  "name": "ExampleBot",
+  "name": "examplebot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,8 @@
   "dependencies": {
     "@silent-coder/discord-cmd-handler": "^2.2.1",
     "discord.js": "^12.5.3",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.1",
     "ultrax": "file:.."
   }
 }
