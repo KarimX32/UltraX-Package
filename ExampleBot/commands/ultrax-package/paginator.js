@@ -12,7 +12,7 @@ exports.run = async (client, message, args, logger) => {
             .setTitle("3nd page embed");
         const embed4 = new MessageEmbed()
             .setTitle("4nd page embed");
-        await ultrax.ButtonPaginatoir(message, [embed1, embed2, embed3, embed4], [{
+        await ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
                 style: 'green',
                 label: 'back',
                 id: 'back' // don't change this line
@@ -31,10 +31,10 @@ exports.run = async (client, message, args, logger) => {
 }
 
 exports.help = {
-    name: "pagninator",
-    description: "pagninator's a message",
-    usage: "pagninator",
-    example: "pagninator"
+    name: "paginator",
+    description: "paginator's a message",
+    usage: "paginator",
+    example: "paginator"
 }
 
 exports.conf = {
