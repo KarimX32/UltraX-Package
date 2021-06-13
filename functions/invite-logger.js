@@ -15,19 +15,21 @@ module.exports = async (client) => {
         });
     });
     client.on('guildMemberAdd', member => {
-        // To compare, we need to load the current invite list.
-        member.guild.fetchInvites().then(guildInvites => {
-            // This is the *existing* invites for the guild.
-            const ei = invites[member.guild.id];
-            // Update the cached invites for the guild.
-            invites[member.guild.id] = guildInvites;
-            if (!ei) return;
-            //  Look through the invites, find the one for which the uses went up.
-            const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-            // This is just to simplify the message being sent below (inviter doesn't have a tag property)
-            const inviter = client.users.cache.get(invite.inviter.id);
-            // Get the log channel (change to your liking)
-            client.emit("inviteJoin", member, invite, inviter)
-        });
+        try {
+            // To compare, we need to load the current invite list.
+            member.guild.fetchInvites().then(guildInvites => {
+                // This is the *existing* invites for the guild.
+                const ei = invites[member.guild.id];
+                // Update the cached invites for the guild.
+                invites[member.guild.id] = guildInvites;
+                if (!ei) return;
+                //  Look through the invites, find the one for which the uses went up.
+                const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+                // This is just to simplify the message being sent below (inviter doesn't have a tag property)
+                const inviter = client.users.cache.get(invite.inviter.id);
+                // Get the log channel (change to your liking)
+                client.emit("inviteJoin", member, invite, inviter)
+            });
+        } catch (e) {}
     });
 };

@@ -5,7 +5,6 @@ const {
 const Discord = require("discord.js");
 const client = new Discord.Client();
 client.login(require('./config.json').token);
-require("./node_modules/ultrax/functions/non-public-functions/buttons")
 // ==================================================================
 const ultrax = require("ultrax")
 // To Get The new event working we nee dto initilize it by:
