@@ -3,13 +3,12 @@ module.exports = async (code) => {
     code = code.replace("```js", "").replace("```", "").replace("`", "");
     // initilizes params from nodejs 'url' npm
     const params = (new(require("url").URLSearchParams)());
-    // add's all code as 'content' parimeter
     params.append('content', code);
-    return await require("node-fetch")("https://pocket-inc.ml/bin/api/create_post.php", {
+    let a = await require("node-fetch")("https://pocket-inc.ml/bin/api/create.php", {
         body: params,
         method: 'post'
     }).then(r => {
-        console.log( r.text())
         return r.text()
     });
+    return a;
 }
