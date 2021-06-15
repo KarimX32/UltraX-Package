@@ -1,8 +1,8 @@
-const {
-    MessageEmbed
-} = require("discord.js")
 exports.run = async (client, message, args, logger) => {
-    try {
+            try {
+        const {
+            MessageEmbed
+        } = require("discord.js")
         const ultrax = require('ultrax')
         const embed1 = new MessageEmbed()
             .setTitle("1st page embed");
@@ -23,10 +23,8 @@ exports.run = async (client, message, args, logger) => {
                 id: 'next' // don't change this line
             }
         ]);
-
-
     } catch (error) {
-        logger.error(error);
+        console.error(error);
     }
 }
 
