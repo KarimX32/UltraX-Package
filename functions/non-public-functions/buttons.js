@@ -101,15 +101,16 @@ module.exports = async function buttonss(content, options, client, message) {
             clicker: clicker,
             message
         })
-
-        await client.api.interactions(data.id, data.token).callback.post({
-            data: {
-                type: 6,
+        if (data.data.custom_id === "next" || data.data.custom_id === "back") {
+            await client.api.interactions(data.id, data.token).callback.post({
                 data: {
-                    flags: data ? 1 << 6 : null,
+                    type: 6,
+                    data: {
+                        flags: data ? 1 << 6 : null,
+                    },
                 },
-            },
-        });
+            });
+        }
 
     });
 
