@@ -22,10 +22,10 @@ module.exports = async function buttonss(content, options, client, message) {
     }
 
     let buttons = [];
-    let styles = ['blupurple', 'grey', 'green', 'red', 'url'];
+    let styles = ['blurple', 'grey', 'green', 'red', 'url'];
 
     options.buttons.forEach((x, i) => {
-        if (!x.style) x.style = 'blupurple';
+        if (!x.style) x.style = 'blurple';
 
         if (!styles.includes(x.style)) {
             throw new Error(`#${i} button has invalid style, recived ${x.style}`);
@@ -49,7 +49,7 @@ module.exports = async function buttonss(content, options, client, message) {
 
         let style;
 
-        if (x.style === 'blupurple') {
+        if (x.style === 'blurple') {
             style = 1;
         } else if (x.style === 'grey') {
             style = 2;
@@ -77,7 +77,7 @@ module.exports = async function buttonss(content, options, client, message) {
     client.ws.on('INTERACTION_CREATE', async (data) => {
 
         let typeStyles = {
-            1: 'blupurple',
+            1: 'blurple',
             2: 'grey',
             3: 'green',
             4: 'red',

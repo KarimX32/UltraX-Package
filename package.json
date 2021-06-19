@@ -1,15 +1,31 @@
 {
   "name": "ultrax",
-  "version": "1.1.8",
-  "description": "This package is used to make stuff easier by using simple functions, its not fully released yet!",
+  "version": "1.1.9",
+  "description": "UltraX Package it's a unique package that allows you to create cool things using simple functions and make it faster, for example there is an invite logger, discord buttons paginator, etc...",
   "main": "index.js",
   "scripts": {
     "test": "cd ExampleBot && npm i ../ && node ."
   },
-  "author": "UltraX#9586",
-  "license": "ISC",
+  "keywords": [
+    "discord.js",
+    "discord-buttons",
+    "ultrax",
+    "paginator",
+    "functions",
+    "invite-logger",
+    "pagination",
+    "button-paginator",
+    "bin"
+  ],
+  "author": "UltraX",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarimX32/UltraX-Package.git"
+  },
   "dependencies": {
     "discord.js": "^12.5.3",
     "node-fetch": "^2.6.1"
   }
+
 }
