@@ -474,8 +474,8 @@ Client.on('guildMemberAdd', async member => {
 	// creating the image
 	const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color, options)
 
-	// sending the image
-	message.channel.send(image)
+	// sending the image:
+	//channel.send(image)
 })
 ```
 
