@@ -3,7 +3,8 @@ const sleep = require('./functions/sleep'),
     bin = require('./functions/bin'),
     inviteLogger = require("./functions/invite-logger"),
     _checkUpdate = require("./functions/checkUpdates"),
-    ButtonPaginator = require("./functions/button-embed-reactor")
+    ButtonPaginator = require("./functions/button-embed-reactor"),
+    welcomeImage = require('./functions/welcomeImage')
 
 
 
@@ -13,5 +14,6 @@ module.exports = {
     passGen,
     bin,
     inviteLogger,
-    ButtonPaginator
+    ButtonPaginator,
+    welcomeImage
 };
