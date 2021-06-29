@@ -48,7 +48,7 @@ To install UltraX package you need:
 - You need a package called [**discord.js**](https://npmjs.com/package/discord.js).
 
 - You need a package called [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin`](https://npmjs.com/package/ultrax#welcomeImage) function.
-- You need a package called [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeImage).
+- You need a package called [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeimage).
 
   
   
@@ -96,7 +96,7 @@ $ npm install ultrax
 -  [`bin`](https://www.npmjs.com/package/ultrax#bin) - Function that allows you to bin codes.
 
 -  [`ButtonPaginator`](https://www.npmjs.com/package/ultrax#button-baginator) - Function to create embed pages using buttons easily.
-- [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeImage) - Function that creates a welcome image fully customizable using canvas.
+- [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
 
 **Events:**
 
