@@ -1,31 +1,29 @@
 {
-  "name": "ultrax",
-  "version": "1.6.0",
-  "description": "UltraX Package is a unique package that allows you to create cool things using simple functions and make it faster, for example there is an invite logger, discord buttons paginator, etc...",
+  "name": "UltraX-Package",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "cd ExampleBot && npm i ../ && node ."
-  },
-  "keywords": [
-    "discord.js",
-    "discord-buttons",
-    "ultrax",
-    "paginator",
-    "welcome-canvas",
-    "invite-logger",
-    "pagination",
-    "canvas",
-    "bin"
-  ],
-  "author": "UltraX",
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KarimX32/UltraX-Package.git"
-  },
   "dependencies": {
+    "@silent-coder/discord-cmd-handler": "^2.2.1",
     "canvas": "^2.8.0",
     "discord.js": "^12.5.3",
-    "node-fetch": "^2.6.1"
-  }
+    "node-fetch": "^2.6.1",
+    "ultrax": "^1.5.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperSweatyTejas/UltraX-Package.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperSweatyTejas/UltraX-Package/issues"
+  },
+  "homepage": "https://github.com/SuperSweatyTejas/UltraX-Package#readme"
 }

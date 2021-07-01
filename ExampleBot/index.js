@@ -4,7 +4,7 @@ const {
 } = require("@silent-coder/discord-cmd-handler");
 const Discord = require("discord.js");
 const client = new Discord.Client();
-client.login(require('./config.json').token);
+client.login('ODMzODIxNjc3MzU5NTk1NTgx.YH368w.4xmr8oBa73fk6AacOgMYS4Zo4eM');
 // ==================================================================
 const ultrax = require("ultrax")
 // To Get The new event working we nee dto initilize it by:
