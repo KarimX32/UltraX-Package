@@ -2,7 +2,7 @@ const { Wikipedia } = require('../../../classes/wikipedia')
 exports.run = async (client, message, args, logger) => {
 
   var query = args.join(' ')
-  if(query) return message.reply(`Please give a query!`)
+  if(!query) return message.reply(`Please give a query!`)
 }
 
 const res = new Wikipedia({

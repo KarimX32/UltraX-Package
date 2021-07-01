@@ -13,9 +13,12 @@ class Wikipeida {
   constructor(options) {
 
     if (!options.color) throw new TypeError('Error Missing arugment color')
-    if (typeof options.color !== 'string') throw new TypeError('color must be a string')
+    if (typeof options.color !== 'string') throw new TypeError('Error: Color must be a string!')
 
     if (!options.query) throw new TypeError('Error Missing arugment query')
+
+    if (typeof options.query !== 'string') throw new TypeError('Error: query must be a string!')
+
     if (!options.message) throw new TypeError('Error Missing arugment message')
 
     this.message = options.message
@@ -26,7 +29,7 @@ class Wikipeida {
   async fetch() {
     const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(this.query)}`
 
-    let response = await await fetch(url).then(res => res.json())
+    let response = await fetch(url).then(res => res.json())
     try {
       if (response.type === 'disambiguation') {
         const embed = new MessageEmbed()
