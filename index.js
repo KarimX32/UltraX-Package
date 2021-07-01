@@ -8,6 +8,7 @@ const sleep = require('./functions/sleep'),
     Wikipedia = require('../classes/Wikipedia')
 
 
+
 _checkUpdate()
 module.exports = {
     sleep,
