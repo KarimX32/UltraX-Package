@@ -401,9 +401,9 @@ await welcomeImage(background, avatar, text_1, text_2, text_3, color)
 <br>
 
 > The color must be a HEX color's code.
+> As example this HEX:
+> [`#FFFFFF`](https://www.color-hex.com/color/ffffff)
 
-As example this HEX:
-[`#FFFFFF`](https://www.color-hex.com/color/ffffff)
 
 <br>
 In case you will use the options:
@@ -415,7 +415,7 @@ await welcomeImage(background, avatar, text_1, text_2, text_3, color, {font: "Yo
 > the `attachmentName` is always PNG, so whatever name you will put it will end with `.png` as example `Hello.png`
   
 
-  > **Example:**
+**Example:**
 ```js
 // Getting registerFont() from canvas
 const { registerFont } = require('canvas')
