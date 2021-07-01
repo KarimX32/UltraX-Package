@@ -5,6 +5,14 @@ import { Client, MessageAttachment, MessageEmbed } from "discord.js";
  */
 declare module "ultrax";
 
+export class Wikipedia {
+
+    constructor(options: WikipediaOptions);
+
+    public fetch(): Promise<void>;
+
+}
+
 export function sleep(milliseconds: number): Promise<void>;
 
 export function passGen(Length: number): string;
@@ -35,6 +43,13 @@ interface ButtonOptions {
 interface WelcomeImageSettingOptions {
     font?: string;
     attachtmentName?: string;
+}
+
+interface WikipediaOptions {
+    message: string;
+    title?: string;
+    color: string;
+    query: string;
 }
 
 type ButtonStyleOptions = "green" | "red" | "blurple" | "grey" | "url";
