@@ -1,3 +1,8 @@
+/**
+ * SLeep-based Timeout function
+ * @param {Number} milliseconds Sleep time (ms)
+ * @returns {Promise<void>}
+ */
 function sleep(milliseconds) {
     if (!milliseconds) throw new TypeError("Time isn't specified")
     const date = Date.now();

@@ -1,4 +1,13 @@
 const buttonss = require("./non-public-functions/buttons")
+const Discord = require("discord.js");
+
+/**
+ * A button paginator
+ * @param {String} message The main message content
+ * @param {Discord.MessageEmbed[]} pages An array of embeds
+ * @param {Object} [buttons] An array of message components (buttons)
+ * @param {Number} [time] The timeout
+ */
 module.exports = async (message, pages, buttons = [], time = 60000) => {
     if (!message) throw new ReferenceError('EmbedPages => "message" is not defined')
     if (!pages || typeof pages !== 'object') throw new SyntaxError('EmbedPages => Invalid form body [pages]')

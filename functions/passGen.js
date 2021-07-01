@@ -1,3 +1,8 @@
+/**
+ * Generates a password
+ * @param {Number} Length The length of the password characters
+ * @returns {Promise<String>}
+ */
 function passGen(Length) {
     if (!Length) throw new TypeError("Length isn't specified")
     var length = Length,
