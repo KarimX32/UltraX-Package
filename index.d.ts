@@ -1,4 +1,4 @@
-import { Client, MessageAttachment, MessageEmbed } from "discord.js";
+import { Client, MessageAttachment, MessageEmbed, Message, ColorResolvable } from "discord.js";
 
 /**
  * Code and detailed explanation for UltraX package
@@ -46,9 +46,9 @@ interface WelcomeImageSettingOptions {
 }
 
 interface WikipediaOptions {
-    message: string;
+    message: Message;
     title?: string;
-    color: string;
+    color: ColorResolvable;
     query: string;
 }
 
