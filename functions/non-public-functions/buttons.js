@@ -66,6 +66,11 @@ module.exports = async function buttonss(content, options, client, message) {
             style: style,
             label: x.label,
             custom_id: x.id || null,
+            emoji: {
+                name: null,
+                id: null,
+                animated: false,
+            },
             url: x.url || null
         }
 
