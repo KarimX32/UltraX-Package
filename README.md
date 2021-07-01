@@ -448,6 +448,8 @@ registerFont('ShadowsIntoLight-Regular.ttf', { family: "Shadows Into Light" });
 
 // Event
 Client.on('guildMemberAdd', async member => {
+const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome');
+	if (!channel) return;
 
 	// defining the background as bg
 	let  bg = 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png'
@@ -477,8 +479,9 @@ Client.on('guildMemberAdd', async member => {
 	const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color, options)
 
 	// sending the image:
-	//channel.send(image)
+	channel.send(image)
 })
+client.login("TOKEN")
 ```
 ## wikipedia
 
