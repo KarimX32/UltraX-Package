@@ -383,7 +383,7 @@ As we mentioned before its fully customizable, so lets see the parameters and th
 - text_3 (Footer)
 - color
 
-**Options:**
+**Options (Optional of course):**
 
 - `font` {default: "San Serif"}
 - `attachmentName` {default: "welcome"}
@@ -395,10 +395,8 @@ So now lets talk about the correct Syntax for it!
 await welcomeImage(background, avatar, text_1, text_2, text_3, color)
 ```
 
-> The background must be a PNG image's URL.
+> The background must be a PNG image.
 
-As example this URL:
-[`https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png`](https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png)
 
 <br>
 
@@ -416,7 +414,7 @@ await welcomeImage(background, avatar, text_1, text_2, text_3, color, {font: "Yo
 
 > the `attachmentName` is always PNG, so whatever name you will put it will end with `.png` as example `Hello.png`
   
-  > To use custom fonts, you need to install the font (ttf/otf) yourself and use [`registerFont()`](https://github.com/Automattic/node-canvas#registerfont) to register the font and be able to use it.
+
   > **Example:**
 ```js
 // Getting registerFont() from canvas
@@ -425,6 +423,8 @@ const { registerFont } = require('canvas')
 // Registering the font
 registerFont('ShadowsIntoLight-Regular.ttf', { family: "Shadows Into Light" });
 ```
+
+  > To use custom fonts, you need to install the font (ttf/otf) yourself and use [`registerFont()`](https://github.com/Automattic/node-canvas#registerfont) to register the font and be able to use it.
 
 <br>
 <br>
@@ -465,7 +465,7 @@ Client.on('guildMemberAdd', async member => {
 	// defining the color, here its white
 	let  color = '#ffffff'
 
-	// defining the options and setting them
+	// defining the options and setting them (Those are optional)
 	const options = {
 		font: "Shadows Into Light",
 		attachmentName: `welcome-${member.id}`

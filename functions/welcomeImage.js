@@ -2,7 +2,6 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
     const Canvas = require('canvas')
     const discord = require('discord.js')
     if(!background) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background is null.")
-    if(!background.startsWith('https://')) throw new Error("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background is not a URL.")
     if(!background.endsWith('.png')) throw new Error("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background must be a PNG.")
     if(!avatar) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> avatar is null")
     if(!text_1) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> text_1 is null")
