@@ -56,4 +56,4 @@ class Wikipeida {
   }
 }
 
-module.exports = Wikipedia;
+module.exports = Wikipeida;
