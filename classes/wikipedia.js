@@ -40,6 +40,7 @@ class Wikipeida {
           .setDescription([`
                 ${response.extract}
                 Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`])
+          this.message.channel.send(embed)
       } else {
         const fullEmbed = new MessageEmbed()
           .setTitle(response.title)
@@ -47,9 +48,10 @@ class Wikipeida {
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
           .setDescription(response.extract)
+          this.message.channel.send(fullEmbed)
       }
     } catch (e) {
-      this.channel.send(`No results for ${this.query}`)
+      this.message.channel.send(`No results for ${this.query}`)
     }
   }
 }
