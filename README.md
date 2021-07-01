@@ -47,7 +47,7 @@ To install UltraX package you need:
 
 - You need a package called [**discord.js**](https://npmjs.com/package/discord.js).
 
-- You need a package called [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin`](https://npmjs.com/package/ultrax#welcomeImage) function.
+- You need a package called [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin`](https://npmjs.com/package/ultrax#welcomeImage) and [`Wikipedia`](https://npmjs.com/package/ultrax#wikipedia)function.
 - You need a package called [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeimage).
 
   
@@ -97,6 +97,8 @@ $ npm install ultrax
 
 -  [`ButtonPaginator`](https://www.npmjs.com/package/ultrax#button-baginator) - Function to create embed pages using buttons easily.
 - [`welcomeImage`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
+
+- [`Wikipedia`](https://npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
 
 **Events:**
 
@@ -477,6 +479,35 @@ Client.on('guildMemberAdd', async member => {
 	// sending the image:
 	//channel.send(image)
 })
+```
+## wikipedia
+
+**A simple function to allow you to fetch a topic from wikipedia**
+
+**Example**
+
+```js
+const Wikipedia = require('ultrax')
+const prefix = "!" // require bots prefix
+client.on('message', message => { // Client's message event
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).trim().split(' '); //Defining Args
+    const command = args.shift().toLowerCase(); //defining command
+
+    if (command === "wikipedia") { //If a user does !wikipedia, this command will execute
+
+        let query = args.join(" ") //using args to define a search query, exmaple usage !wikipdia earth
+
+        if (!query) return message.channel.send('Please provide a search query') // Sending a message if a user does not provide a search query
+        const res = new Wikipedia({ // Inistigating the wikipedia class
+            message: message, //The message
+            color: "RED", //Color of embed that will be sent
+            query: query //what the search query is
+        })
+        res.fetch() // fetching the result from wikipedia
+    }
+});
 ```
 
   
