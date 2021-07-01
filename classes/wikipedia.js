@@ -51,7 +51,7 @@ class Wikipeida {
           this.message.channel.send(fullEmbed)
       }
     } catch (e) {
-      this.message.channel.send(`No results for ${this.query}`)
+      this.message.channel.send(new MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
     }
   }
 }
