@@ -1,9 +1,17 @@
-import { Client, MessageAttachment, MessageEmbed } from "discord.js";
+import { Client, MessageAttachment, MessageEmbed, Message, ColorResolvable } from "discord.js";
 
 /**
  * Code and detailed explanation for UltraX package
  */
 declare module "ultrax";
+
+export class Wikipedia {
+
+    constructor(options: WikipediaOptions);
+
+    public fetch(): Promise<void>;
+
+}
 
 export function sleep(milliseconds: number): Promise<void>;
 
@@ -35,6 +43,13 @@ interface ButtonOptions {
 interface WelcomeImageSettingOptions {
     font?: string;
     attachtmentName?: string;
+}
+
+interface WikipediaOptions {
+    message: Message;
+    title?: string;
+    color: ColorResolvable;
+    query: string;
 }
 
 type ButtonStyleOptions = "green" | "red" | "blurple" | "grey" | "url";

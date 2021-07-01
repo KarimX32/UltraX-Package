@@ -497,7 +497,7 @@ Client.on('guildMemberAdd', async member => {
 **Example**
 
 ```js
-const Wikipedia = require('ultrax')
+const ultrax = require('ultrax')
 const prefix = "!" // require bots prefix
 client.on('message', message => { // Client's message event
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -510,7 +510,7 @@ client.on('message', message => { // Client's message event
         let query = args.join(" ") //using args to define a search query, exmaple usage !wikipdia earth
 
         if (!query) return message.channel.send('Please provide a search query') // Sending a message if a user does not provide a search query
-        const res = new Wikipedia({ // Inistigating the wikipedia class
+        const res = new ultrax.Wikipedia({ // Inistigating the wikipedia class
             message: message, //The message
             color: "RED", //Color of embed that will be sent
             query: query //what the search query is

@@ -1,13 +1,14 @@
 const fetch = require('node-fetch')
-const { MessageEmbed } = require('discord.js')
+const Discord = require('discord.js')
+
 class Wikipeida {
   /**
    * @name Wikipedia
    * @kind constructor
-   * @param {any} [options.message] the discord message
-   * @param {string} [options.title] title of the embed
-   * @param {string} [options.color] color of embed 
-    * @param {string} [options.query] search query
+   * @param {Discord.Message} options.message The message
+   * @param {String} [options.title] Title of the embed
+   * @param {Discord.ColorResolvable} options.color Color of the embed 
+   * @param {String} options.query The search query
   */
 
   constructor(options) {
@@ -37,7 +38,7 @@ class Wikipeida {
     }
     try {
       if (response.type === 'disambiguation') {
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
           .setTitle(response.title)
           .setColor(this.color)
           .setURL(response.content_urls.desktop.page)
@@ -47,7 +48,7 @@ class Wikipeida {
                 Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`])
           this.message.channel.send(embed)
       } else {
-        const fullEmbed = new MessageEmbed()
+        const fullEmbed = new Discord.MessageEmbed()
           .setTitle(response.title)
           .setColor(this.color)
           .setURL(response.content_urls.desktop.page)
@@ -56,7 +57,7 @@ class Wikipeida {
           this.message.channel.send(fullEmbed)
       }
     } catch (e) {
-      this.message.channel.send(new MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
+      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
     }
   }
 }
