@@ -29,7 +29,12 @@ class Wikipeida {
   async fetch() {
     const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(this.query)}`
 
-    let response = await fetch(url).then(res => res.json())
+    let response;
+    try {
+      response = await fetch(url).then(res => res.json())
+    } catch(e) {
+      console.log('Something went wrong with Wikipedia search\n' + e)
+    }
     try {
       if (response.type === 'disambiguation') {
         const embed = new MessageEmbed()
