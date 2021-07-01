@@ -342,6 +342,11 @@ style:  'green',
 
 label:  'back',
 
+emoji: {
+	name: '◀',
+	animated: false
+},
+
 id:  'back'  // don't change this line
 
 },
@@ -353,6 +358,11 @@ id:  'back'  // don't change this line
 style:  'blurple',
 
 label:  'next',
+
+emoji: {
+	name: '▶',
+	animated: false
+},
 
 id:  'next'  // don't change this line
 

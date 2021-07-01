@@ -1,6 +1,18 @@
+const Canvas = require("canvas");
+const Discord = require("discord.js"); 
+
+/**
+ * Create a welcome image for Discord bot using discord.js
+ * @param {String} background The image background
+ * @param {String} avatar The avatar
+ * @param {String} text_1 The title
+ * @param {String} text_2 The subtitle
+ * @param {String} text_3 The footer
+ * @param {String} color The color (hex code)
+ * @param {String | Object} settings The attachment
+ * @returns {Discord.MessageAttachment}
+ */
 module.exports = async function welcomeImage(background, avatar, text_1, text_2, text_3, color, settings) {
-    const Canvas = require('canvas')
-    const discord = require('discord.js')
     if(!background) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background is null.")
     if(!background.endsWith('.png')) throw new Error("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background must be a PNG.")
     if(!avatar) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> avatar is null")
@@ -49,6 +61,6 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
         canvas.context.drawImage(img, 393, 47, 238, 238);
     })
     
-	return new discord.MessageAttachment(canvas.create.toBuffer(), `${attachmentName}.png`);
+	return new Discord.MessageAttachment(canvas.create.toBuffer(), `${attachmentName}.png`);
 }
 

@@ -1,5 +1,8 @@
 import { Client, MessageAttachment, MessageEmbed } from "discord.js";
 
+/**
+ * Code and detailed explanation for UltraX package
+ */
 declare module "ultrax";
 
 export function sleep(milliseconds: number): Promise<void>;
@@ -15,7 +18,7 @@ export function welcomeImage(background: string, avatar: string, text_1?: string
 export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>; 
     
 interface ButtonEmojiOptions {
-    id: string,
+    id?: string,
     name: string,
     animated?: boolean;
 }

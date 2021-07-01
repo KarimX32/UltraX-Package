@@ -1,4 +1,11 @@
 const invites = {};
+const Discord = require("discord.js");
+
+/**
+ * Invite Logger system in Discord bot using discord.js
+ * @param {Discord.Client} client 
+ * @returns {Promise<void>}
+ */
 module.exports = async (client) => {
     // Initialize the invite cache
     // A pretty useful method to create a delay without blocking the whole script.

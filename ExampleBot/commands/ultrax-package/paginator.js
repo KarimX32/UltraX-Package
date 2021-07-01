@@ -15,11 +15,21 @@ exports.run = async (client, message, args, logger) => {
         await ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
                 style: 'green',
                 label: 'back',
+                emoji: {
+                    name: '◀',
+                    id: null,
+                    animated: false  
+                },
                 id: 'back' // don't change this line
             },
             {
                 style: 'blupurple',
                 label: 'next',
+                emoji: {
+                    name: '▶',
+                    id: null,
+                    animated: false
+                },
                 id: 'next' // don't change this line
             }
         ]);

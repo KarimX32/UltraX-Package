@@ -1,3 +1,8 @@
+/**
+ * Bin a code
+ * @param {String} code Code to be bin
+ * @returns {Promise<String>}
+ */
 module.exports = async (code) => {
     // replaces all '`' with air.
     code = code.replace("```js", "").replace("```", "").replace("`", "");
