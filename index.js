@@ -5,7 +5,7 @@ const sleep = require('./functions/sleep'),
     _checkUpdate = require("./functions/checkUpdates"),
     ButtonPaginator = require("./functions/button-embed-reactor"),
     welcomeImage = require('./functions/welcomeImage'),
-    Wikipedia = require('../classes/Wikipedia')
+    Wikipedia = require('./classes/wikipedia')
 
 
 
