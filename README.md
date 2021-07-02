@@ -341,7 +341,26 @@ const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color
 
 });
 ```
+## Sussybaka
+Makes a sussybaka image with a image url
 
+**Example**
+```js
+const ultrax = require("ultrax");
+const { Client } = require("discord.js");
+const client = new Client();
+
+client.on("message", (message) => {
+	if(message.content === "!sussybaka"){
+    const theSussyBaka = new ultrax.sussyBaka(image);
+	//It will return a Discord attachment!
+	const Image = theSussyBaka.get();
+	return message.channel.send(Image);
+	}
+});
+```
+### Output
+![sussybaka](https://cdn.discordapp.com/attachments/716221150929092648/860530758263635978/love.png)
 ## wikipedia
 
 A simple function to allow you to fetch a topic from wikipedia
@@ -350,7 +369,7 @@ A simple function to allow you to fetch a topic from wikipedia
 
 ```js
 // defining the package
-const  ultrax = require('ultrax') 
+const ultrax = require('ultrax') 
 
 // we will be searching earth
 let  query = 'earth'

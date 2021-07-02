@@ -1,4 +1,4 @@
-const sussyBaka = require('../../../classes/sussybaka');
+const sussyBaka = require('ultrax').sussyBaka
 
 exports.run = async (client, message, args, logger) => {
 
