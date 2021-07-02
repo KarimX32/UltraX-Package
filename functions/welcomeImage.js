@@ -39,11 +39,13 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
     else text1_fontSize = settings.text1_fontSize
 
     if(!settings || !settings.text2_fontSize) text2_fontSize = 42
-    else if(settings.text2_fontSize < 5) throw new Error("text1_fontSize ==> The text 1 font size cannot be less than 5px")
+    else if(isNaN(settings.text2_fontSize)) throw new Error("text2_fontSize ==> The text 2 font size isNaN")
+    else if(settings.text2_fontSize < 5) throw new Error("text2_fontSize ==> The text 2 font size cannot be less than 5px")
     else text2_fontSize = settings.text2_fontSize
 
     if(!settings || !settings.text3_fontSize) text3_fontSize = 32
-    else if(settings.text3_fontSize < 5) throw new Error("text1_fontSize ==> The text 1 font size cannot be less than 5px")
+    else if(isNaN(settings.text3_fontSize)) throw new Error("text3_fontSize ==> The text 3 font size isNaN")
+    else if(settings.text3_fontSize < 5) throw new Error("text3_fontSize ==> The text 3 font size cannot be less than 5px")
     else text3_fontSize = settings.text3_fontSize
 
 
