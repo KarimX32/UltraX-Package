@@ -5,7 +5,8 @@ const sleep = require('./functions/sleep'),
     _checkUpdate = require("./functions/checkUpdates"),
     ButtonPaginator = require("./functions/button-embed-reactor"),
     welcomeImage = require('./functions/welcomeImage'),
-    Wikipedia = require('./classes/wikipedia')
+    Wikipedia = require('./classes/wikipedia'),
+    sussyBaka = require('./classes/sussybaka')
 
 
 
@@ -17,5 +18,6 @@ module.exports = {
     inviteLogger,
     ButtonPaginator,
     welcomeImage,
-    Wikipedia
+    Wikipedia,
+    sussyBaka
 };

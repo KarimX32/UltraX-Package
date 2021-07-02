@@ -12,7 +12,13 @@ export class Wikipedia {
     public fetch(): Promise<void>;
 
 }
+/* export class sussyBaka {
 
+    constructor(baka: string);
+
+    public get(): Promise<MessageAttachment>;
+
+} */
 export function sleep(milliseconds: number): Promise<void>;
 
 export function passGen(Length: number): string;

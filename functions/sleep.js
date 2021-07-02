@@ -1,5 +1,5 @@
 /**
- * SLeep-based Timeout function
+ * Sleep-based Timeout function
  * @param {Number} milliseconds Sleep time (ms)
  * @returns {Promise<void>}
  */
