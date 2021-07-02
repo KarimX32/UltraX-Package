@@ -18,5 +18,6 @@ module.exports = {
     inviteLogger,
     ButtonPaginator,
     welcomeImage,
-    Wikipedia
+    Wikipedia,
+    sussyBaka
 };
