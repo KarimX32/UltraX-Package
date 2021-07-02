@@ -1,11 +1,10 @@
 const Discord = require("discord.js")
 exports.run = async (client, message, args, logger) => {
     try {
-        
         const ultrax = require('ultrax')
         if (!args.join(' ')) return message.channel.send('What do you wnat to bin?');
         else {
-            const bin = await ultrax.bin(args.join(' '));
+            const bin = await ultrax.bin(args.join(' '), true); // true means editable while false means not editable
             message.channel.send('Here i binned the code ' + bin)
         }
 
