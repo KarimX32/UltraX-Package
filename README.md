@@ -328,7 +328,7 @@ client.on("message", async(message) => {
 });
 ```
 ### Output
-![sussybaka](https://cdn.discordapp.com/attachments/840140272531668992/860929826159853589/sussybaka.png)
+![sussybaka](https://cdn.discordapp.com/attachments/838996367611396148/860983775415894057/sussybaka.png)
 ## wikipedia
 
 A simple function to allow you to fetch a topic from wikipedia
