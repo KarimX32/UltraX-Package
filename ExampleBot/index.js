@@ -7,6 +7,8 @@ const client = new Discord.Client();
 client.login(require('./config.json').token);
 // ==================================================================
 const ultrax = require("ultrax")
+// Connecting to mongoose
+ultrax.connectToMongoDB(require("./config.json").mongourl)
 // To Get The new event working we nee dto initilize it by:
 ultrax.inviteLogger(client)
 // now below event will work
@@ -14,6 +16,14 @@ client.on('inviteJoin', (member, invite, inviter) => {
     console.log(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`)
 });
 // ==================================================================
+// New Event for Remind function;
+// this will make so below events triggers
+ultrax.remind.startRemind(client);
+client.on('reminder', (user, reason, time) => {
+    client.users.cache.get(user.id).send(`You asked me \`${time}\` ago to remind you \n \`${reason}\``)
+});
+// ==================================================================
+
 
 client.on("ready", () => {
     //I'm using logger and not console beacuse it has colours :) 

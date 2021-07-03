@@ -1,3 +1,4 @@
+const db = require("mongoose");
 const sleep = require('./functions/sleep'),
     passGen = require('./functions/passGen'),
     bin = require('./functions/bin'),
@@ -5,9 +6,9 @@ const sleep = require('./functions/sleep'),
     _checkUpdate = require("./functions/checkUpdates"),
     ButtonPaginator = require("./functions/button-embed-reactor"),
     welcomeImage = require('./functions/welcomeImage'),
-    Wikipedia = require('./classes/wikipedia')
-
-
+    Wikipedia = require('./classes/wikipedia'),
+    sussyBaka = require('./classes/sussybaka'),
+    remind = require('./functions/remind')
 
 _checkUpdate()
 module.exports = {
@@ -17,5 +18,21 @@ module.exports = {
     inviteLogger,
     ButtonPaginator,
     welcomeImage,
-    Wikipedia
+    Wikipedia,
+    sussyBaka,
+    connectToMongoDB,
+    remind
 };
+
+function connectToMongoDB(MongoDBURL) {
+    let connected = true;
+    db.connect(MongoDBURL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).catch(e => {
+        connected = false;
+        throw e;
+    }).then(() => {
+        if (connected === true) console.info("[UltraX] => Connected to DB successfully.")
+    });
+}

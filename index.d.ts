@@ -23,8 +23,10 @@ export function bin(code: string): Promise<string>;
 
 export function welcomeImage(background: string, avatar: string, text_1?: string, text_2?: string, text_3?: string, color?: string, settings?: WelcomeImageSettingOptions): Promise<MessageAttachment>;
 
-export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>; 
-    
+export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>;
+
+export function remind(memberID?: string, reason?: string,  time?: string): Promise<void>;
+
 interface ButtonEmojiOptions {
     id?: string,
     name: string,
