@@ -1,6 +1,6 @@
 /**
  * SLeep-based Timeout function
- * @param {Number} milliseconds Sleep time (ms)
+ * @param {Number} ms Sleep time (ms)
  * @returns {Promise<void>}
  */
 const sleep = (ms) => {
