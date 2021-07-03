@@ -19,9 +19,13 @@ class sussyBaka {
         const sussybaka = await Canvas.loadImage("https://cdn.discordapp.com/attachments/840140272531668992/860526903542415401/852084751388377089.png");
         ctx.drawImage(sussybaka, 0, 0, the_canvas.width, the_canvas.height);
 
-        
+
         const theSussyBaka = await Canvas.loadImage(this.baka);
-        ctx.drawImage(theSussyBaka, 70, 10, 150, 150);
+        ctx.beginPath();
+        ctx.arc(100, 100, 90, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(theSussyBaka, 0, 0, 200, 200);
         return new Discord.MessageAttachment(the_canvas.toBuffer(), 'sussybaka.png');
     }
 };

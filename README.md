@@ -320,7 +320,7 @@ const client = new Client();
 
 client.on("message", async(message) => {
 	if(message.content === "!sussybaka"){
-    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || client.users.cache.get(args[0])?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
+    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
 	//It will return a Discord attachment!
 	const Image = await theSussyBaka.get();
 	return message.channel.send(Image);
@@ -328,7 +328,7 @@ client.on("message", async(message) => {
 });
 ```
 ### Output
-![sussybaka](https://cdn.discordapp.com/attachments/840140272531668992/860929826159853589/sussybaka.png)
+![sussybaka](https://cdn.discordapp.com/attachments/838996367611396148/860983775415894057/sussybaka.png)
 ## wikipedia
 
 A simple function to allow you to fetch a topic from wikipedia
