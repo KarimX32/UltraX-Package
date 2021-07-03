@@ -26,9 +26,7 @@
   },
   "dependencies": {
     "canvas": "^2.8.0",
-    "clean-jsdoc-theme": "^3.2.7",
     "discord.js": "^12.5.3",
-    "jsdoc": "^3.6.7",
     "node-fetch": "^2.6.1"
   }
 }
