@@ -3,7 +3,7 @@
  * @param {String} code Code to be bin
  * @returns {Promise<String>}
  */
- module.exports = async (code, edit = true) => {
+async function bin(code, edit = true) {
     let editable = 1;
     if (edit === false) editable = 0;
         // replaces all '`' with air.
@@ -22,3 +22,4 @@
     return a;
 }
 
+module.exports = bin;

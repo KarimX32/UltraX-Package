@@ -4,7 +4,8 @@
   "description": "UltraX Package is a unique package that allows you to create cool things using simple functions and make it faster, for example there is an invite logger, discord buttons paginator, etc...",
   "main": "index.js",
   "scripts": {
-    "test": "cd ExampleBot && npm i ../ && node ."
+    "test": "cd ExampleBot && npm i ../ && node .",
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "keywords": [
     "discord.js",

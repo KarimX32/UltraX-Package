@@ -12,7 +12,7 @@ const Discord = require("discord.js");
  * @param {String | Object} settings The attachment
  * @returns {Discord.MessageAttachment}
  */
-module.exports = async function welcomeImage(background, avatar, text_1, text_2, text_3, color, settings) {
+async function welcomeImage(background, avatar, text_1, text_2, text_3, color, settings) {
     if(!background) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background is null.")
     if(!background.endsWith('.png')) throw new Error("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> background must be a PNG.")
     if(!avatar) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> avatar is null")
@@ -84,3 +84,4 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
 	return new Discord.MessageAttachment(canvas.create.toBuffer(), `${attachmentName}.png`);
 }
 
+module.exports = welcomeImage
