@@ -2,10 +2,12 @@ const Canvas = require("canvas");
 const Discord = require("discord.js");
 
 class sussyBaka {
-    
     /**
+     * @name sussyBaka
+     * @kind constructor
      * @param {String} baka The sussybaka's link, needs to end with .png
-     */
+    */
+
     constructor(baka) {
         this.baka = baka;
     }
@@ -17,12 +19,12 @@ class sussyBaka {
         const sussybaka = await Canvas.loadImage("https://cdn.discordapp.com/attachments/840140272531668992/860526903542415401/852084751388377089.png");
         ctx.drawImage(sussybaka, 0, 0, the_canvas.width, the_canvas.height);
 
-
+        
         const theSussyBaka = await Canvas.loadImage(this.baka);
-        ctx.drawImage(theSussyBaka, 10, 10, 200, 200);
-        const THESUSSSSS = new Discord.MessageAttachment(the_canvas.toBuffer(), 'sussybaka.png');
-
-        return THESUSSSSS;
+        ctx.drawImage(theSussyBaka, 70, 10, 150, 150);
+        return new Discord.MessageAttachment(the_canvas.toBuffer(), 'sussybaka.png');
     }
-}
+};
+
+
 module.exports = sussyBaka;
