@@ -338,6 +338,7 @@ Parameters:
 - MemberID
 - Time
 - Reason
+  
 **Example**
 ```js
 const remind = require("ultrax").remind;
@@ -357,6 +358,7 @@ This will trigger when someone uses remind command ( [`remind function`](https:/
 - User
 - reason
 - time
+  
 **Example**
 ```js
 const Discord = require("discord.js");
@@ -366,7 +368,7 @@ client.login('TOKEN HERE');
 const ultrax = require("ultrax")
 // Connecting to mongoose'
 ultrax.connectToMongoDB('MONGO DB URL');
-// this wikll make reminder event work!
+// this will make reminder event work!
 ultrax.remind.startRemind(client);
 //================================================================
 // New Event for Remind function;
