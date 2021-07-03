@@ -320,7 +320,7 @@ const client = new Client();
 
 client.on("message", async(message) => {
 	if(message.content === "!sussybaka"){
-    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || client.users.cache.get(args[0])?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
+    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
 	//It will return a Discord attachment!
 	const Image = await theSussyBaka.get();
 	return message.channel.send(Image);
