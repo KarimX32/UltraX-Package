@@ -2,12 +2,10 @@ const Canvas = require("canvas");
 const Discord = require("discord.js");
 
 class sussyBaka {
+    
     /**
-     * @name sussyBaka
-     * @kind constructor
      * @param {String} baka The sussybaka's link, needs to end with .png
-    */
-
+     */
     constructor(baka) {
         this.baka = baka;
     }

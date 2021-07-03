@@ -2,15 +2,13 @@ const fetch = require('node-fetch')
 const Discord = require('discord.js')
 
 class Wikipeida {
+
   /**
-   * @name Wikipedia
-   * @kind constructor
    * @param {Discord.Message} options.message The message
    * @param {String} [options.title] Title of the embed
    * @param {Discord.ColorResolvable} options.color Color of the embed 
    * @param {String} options.query The search query
   */
-
   constructor(options) {
 
     if (!options.color) throw new TypeError('Error Missing arugment color')
