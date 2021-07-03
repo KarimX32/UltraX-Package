@@ -309,7 +309,26 @@ const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color
 
 });
 ```
+## Sussybaka
+Makes a sussybaka image with a image url
 
+**Example**
+```js
+const ultrax = require("ultrax");
+const { Client } = require("discord.js");
+const client = new Client();
+
+client.on("message", async(message) => {
+	if(message.content === "!sussybaka"){
+    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || client.users.cache.get(args[0])?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
+	//It will return a Discord attachment!
+	const Image = await theSussyBaka.get();
+	return message.channel.send(Image);
+	}
+});
+```
+### Output
+![sussybaka](https://cdn.discordapp.com/attachments/840140272531668992/860929826159853589/sussybaka.png)
 ## wikipedia
 
 A simple function to allow you to fetch a topic from wikipedia
