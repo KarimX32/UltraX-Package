@@ -1,20 +1,11 @@
 /**
  * SLeep-based Timeout function
- * @param {Number} milliseconds Sleep time (ms)
+ * @param {Number} ms Sleep time (ms)
  * @returns {Promise<void>}
  */
-function sleep(milliseconds) {
-    if (!milliseconds) throw new TypeError("Time isn't specified")
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+const sleep = (ms) => {
+   if (!ms) throw new TypeError("Time isn't specified");
+   return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 module.exports = sleep;
-
-/**
- * const wait = require('util').promisify(setTimeout)
- * wait(5000)
- */
