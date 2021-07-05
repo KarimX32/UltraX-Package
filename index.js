@@ -8,7 +8,11 @@ const sleep = require('./functions/sleep'),
     welcomeImage = require('./functions/welcomeImage'),
     Wikipedia = require('./classes/wikipedia'),
     sussyBaka = require('./classes/sussybaka'),
-    remind = require('./functions/remind')
+    remind = require('./functions/remind'),
+    logger = require('./functions/logger'),
+    sussyBaka = require('./classes/sussybaka')
+
+
 
 _checkUpdate()
 module.exports = {
@@ -21,7 +25,8 @@ module.exports = {
     Wikipedia,
     sussyBaka,
     connectToMongoDB,
-    remind
+    remind,
+    logger
 };
 
 function connectToMongoDB(MongoDBURL) {
