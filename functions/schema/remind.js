@@ -20,8 +20,8 @@ module.exports = model('remind', new Schema({
         type: String,
         default: new Date().toLocaleString()
     },
-    lastUpdatedMS: {
+    timeMS: {
         type: Number,
-        default: Date.now()
+        required: true
     }
 }));

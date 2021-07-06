@@ -11,8 +11,6 @@ const sleep = require('./functions/sleep'),
     remind = require('./functions/remind'),
     logger = require('./functions/logger')
 
-
-
 _checkUpdate()
 module.exports = {
     sleep,
