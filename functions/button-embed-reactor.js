@@ -8,7 +8,7 @@ const Discord = require("discord.js");
  * @param {Object} [buttons] An array of message components (buttons)
  * @param {Number} [time] The timeout
  */
-module.exports = async (message, pages, buttons = [], time = 60000) => {
+async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
     if (!message) throw new ReferenceError('EmbedPages => "message" is not defined')
     if (!pages || typeof pages !== 'object') throw new SyntaxError('EmbedPages => Invalid form body [pages]')
     if (message.guild.me.hasPermission('MANAGE_MESSAGES')) {
@@ -35,3 +35,5 @@ module.exports = async (message, pages, buttons = [], time = 60000) => {
         });
     };
 };
+
+module.exports = ButtonPaginator;

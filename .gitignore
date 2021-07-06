@@ -1,4 +1,6 @@
 node_modules
 config.json
-package-lock.json
-ExampleBot/package-lock.json
+package-lock-json
+.jsdoc.json
+/docs
+

@@ -6,7 +6,7 @@ const Discord = require("discord.js");
  * @param {Discord.Client} client 
  * @returns {Promise<void>}
  */
-module.exports = async (client) => {
+async function inviteLogger(client) {
     // Initialize the invite cache
     // A pretty useful method to create a delay without blocking the whole script.
     const wait = require('./sleep');
@@ -46,3 +46,12 @@ module.exports = async (client) => {
         } catch (e) {}
     });
 };
+
+/**
+ * @event inviteJoin
+ * @param {Discord.GuildMember} member The guild member
+ * @param {Discord.Invite} invite The invite
+ * @param {Discord.User} inviter The inviter
+ */
+
+module.exports = inviteLogger;

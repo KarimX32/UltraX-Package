@@ -1,10 +1,11 @@
 {
   "name": "ultrax",
-  "version": "1.6.10",
+  "version": "1.7.2",
   "description": "UltraX Package is a unique package that allows you to create cool things using simple functions and make it faster, for example there is an invite logger, discord buttons paginator, etc...",
   "main": "index.js",
   "scripts": {
-    "test": "cd ExampleBot && npm i ../ && node ."
+    "test": "cd ExampleBot && npm i ../ && node .",
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "keywords": [
     "discord.js",
@@ -24,8 +25,7 @@
     "url": "git+https://github.com/KarimX32/UltraX-Package.git"
   },
   "dependencies": {
-    "canvas": "^2.8.0",
     "discord.js": "^12.5.3",
-    "node-fetch": "^2.6.1"
+    "mongoose": "^5.13.2"
   }
 }
