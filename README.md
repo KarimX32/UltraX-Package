@@ -366,11 +366,6 @@ const  res = new ultrax.Wikipedia({
 
 res.fetch() // fetching the result from wikipedia
 ```
-<<<<<<< Updated upstream
-<br>
-
-# Events:
-=======
 ## Remind
 Used in remind command. See `Reminder Event` to see how to detect When a reminder is set of.
 Parameters: 
@@ -428,7 +423,6 @@ client.on('message'(message) => {
 	};
 });
 ```
->>>>>>> Stashed changes
 
 ## Invite Logger Event
 This event is for logging invite uses. This is same as [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
@@ -463,8 +457,7 @@ console.log(`${member.user.tag} joined using invite code ${invite.code} from ${i
 });
 ```
 
-> `ultrax.inviteLogger(client) 
-` put here your discord client. without it, the event won't emit.
+> `ultrax.inviteLogger(client)` put here your discord client. without it, the event won't emit.
 
 -----
 

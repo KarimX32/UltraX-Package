@@ -83,10 +83,5 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
         .then(img => {
             canvas.context.drawImage(img, 393, 47, 238, 238);
         })
-
-<<<<<<< Updated upstream
-module.exports = welcomeImage
-=======
         return new Discord.MessageAttachment(canvas.create.toBuffer(), `${attachmentName}.png`);
 }
->>>>>>> Stashed changes
