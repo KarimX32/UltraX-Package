@@ -1,5 +1,5 @@
 const schema = require("./schema/remind")
-const ms = require("./non-public-functions/ms")
+const ms = require("ms");
 module.exports = async (memberID, time, reason) => {
     if (!memberID) throw new Error('[UltraX] Error: Member is not defined in remind function')
     if (!time) throw new Error('[UltraX] Error: Time is not defined in remind function')
