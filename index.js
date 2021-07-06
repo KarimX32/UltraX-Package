@@ -9,9 +9,7 @@ const sleep = require('./functions/sleep'),
     Wikipedia = require('./classes/wikipedia'),
     sussyBaka = require('./classes/sussybaka'),
     remind = require('./functions/remind'),
-    logger = require('./functions/logger'),
-    sussyBaka = require('./classes/sussybaka')
-
+    logger = require('./functions/logger')
 
 
 _checkUpdate()
