@@ -1,19 +1,18 @@
 const {
     Wikipedia
-} = require('../../../classes/wikipedia')
+} = require('ultrax')
 exports.run = async (client, message, args, logger) => {
 
     var query = args.join(' ')
     if (!query) return message.reply(`Please give a query!`)
+
     const res = new Wikipedia({
         message: message,
         color: "RED",
         query: query
     })
-    res.fetch();
-    }
-
-
+    res.fetch()
+}
 exports.help = {
     name: "wikipedia",
     description: "Searchs Wikipedia for a query",

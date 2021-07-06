@@ -1,5 +1,9 @@
 module.exports = async () => {
-    if (!require('node-fetch')) return;
+    try {
+        require.resolve("node-fetch")
+    } catch (e) {
+        return;
+    }
     const packageData = await require('node-fetch')(`https://registry.npmjs.com/ultrax`).then(text => text.json())
     if (require('../package.json').version !== packageData['dist-tags'].latest) {
         console.log('\n\n')
