@@ -11,14 +11,11 @@ class Wikipeida {
   */
   constructor(options) {
 
-    if (!options.color) throw new TypeError('Error Missing arugment color')
-    if (typeof options.color !== 'string') throw new TypeError('Error: Color must be a string!')
-
-    if (!options.query) throw new TypeError('Error Missing arugment query')
-
-    if (typeof options.query !== 'string') throw new TypeError('Error: query must be a string!')
-
-    if (!options.message) throw new TypeError('Error Missing arugment message')
+    if (!options.color) throw new TypeError('[UltraX] => Error: Missing arugment color in wikipedia function.')
+    if (typeof options.color !== 'string') throw new TypeError('[UltraX] => Error: Color must be a string! in wikipedia function.')
+    if (!options.query) throw new TypeError('[UltraX] => Error: Missing arugment query in wikipedia function.')
+    if (typeof options.query !== 'string') throw new TypeError('[UltraX] => Error: query must be a string! in wikipedia function.')
+    if (!options.message) throw new TypeError('[UltraX] => Error: Missing arugment message in wikipedia function.')
 
     this.message = options.message
     this.color = options.color
@@ -31,7 +28,7 @@ class Wikipeida {
     let response;
     try {
       response = await fetch(url).then(res => res.json())
-    } catch(e) {
+    } catch (e) {
       console.log('Something went wrong with Wikipedia search\n' + e)
     }
     try {
@@ -41,10 +38,8 @@ class Wikipeida {
           .setColor(this.color)
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
-          .setDescription([`
-                ${response.extract}
-                Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`])
-          this.message.channel.send(embed)
+          .setDescription(`${response.extract} Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`).catch()
+          this.message.channel.send(embed).catch()
       } else {
         const fullEmbed = new Discord.MessageEmbed()
           .setTitle(response.title)
@@ -52,10 +47,10 @@ class Wikipeida {
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
           .setDescription(response.extract)
-          this.message.channel.send(fullEmbed)
+        this.message.channel.send(fullEmbed).catch()
       }
     } catch (e) {
-      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
+      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")).catch()
     }
   }
 }

@@ -23,20 +23,16 @@
   
 
 ## 📥 || Installation
-
 To install UltraX package you need:
-
-- You need to install [**Node.js**](https://nodejs.org/en/download/).
-
+- You need to install [**canvas**](https://npmjs.com/package/canvas) ( Optional ).
 - You need to install [**discord.js**](https://npmjs.com/package/discord.js).
-
-- You need to install [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin()`](https://npmjs.com/package/ultrax#welcomeImage) and [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) functions.
+(https://npmjs.com/package/ultrax#welcomeImage) and [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) functions.
 
 - You need to install [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage).
 
 Then you can open your application's terminal and type:
 
-```
+```sh
 $ npm install ultrax
 ```
 
@@ -55,7 +51,10 @@ $ npm install ultrax
 -  [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
 
 -  [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
-
+-  [`remind()`](https://npmjs.com/package/ultrax#remind) - Function to make remind command 
+ 
+### logger Colors
+-  [`logger`](https://npmjs.com/package/ultrax#logger) - Allows you to use colors in console. 
 ### Events:
 
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
@@ -64,14 +63,17 @@ $ npm install ultrax
 <br>
 <br>
 
+# || logger:
+Color Logger
+```js
+const {colors} = require("ultrax").logger;
+console.log(colors.red + 'Hey this is red Text' + colors.blue + " Hey its blue.")
+```
 # || Functions:
 
 ## sleep
-
 sleep is a simple function, where is make it easier and faster to make a timeout in your code.
-
 **Example:**
-
 ```js
 // Defining the package
 const  ultrax = require('ultrax')
@@ -91,10 +93,7 @@ console.log('5 Seconds passed')
 
 > sleep(ms: Number)
 ## passGen
-
-this is a simple function that can generate passwords using letters and numbers and the password length is custom so you can change it to any length you want!
-
-
+This is a simple function that can generate passwords using letters and numbers and the password length is custom so you can change it to any length you want!
 **Example:**
 
 ```js
@@ -108,13 +107,9 @@ const  passGen = ultrax.passGen
 console.log(passGen(6)) 
 ```
 > passGen(Length: Number)
-
 ## Bin
-
 This function is used to bin your code.
-
 **Example:**
-
 ```js
 // Defining the package
 const  ultrax = require('ultrax')
@@ -134,16 +129,10 @@ console.log('Here i binned the code ' + bin)
 ```
 > bin(String)
 `ultrax.bin(args.join(' '), true/false)` if its true that mean the bin is editable, else if its false that means no one can edit it.
-
 ## Button Paginator
-
 Button Paginator function allows you to create embed pages easily and fast.
-
 > Styles: `red`, `grey`, `blurple`, `green`, `url`
-
-
 **Example:**
-
 ```js
 // Defining the package
 const  ultrax = require('ultrax')
@@ -183,8 +172,6 @@ await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
 ]);
 ```
 > Don't change the id of the buttons otherwise, don't expect it to work.
-  
-
 ## welcomeImage
 
   
@@ -343,7 +330,6 @@ const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color
 ```
 ## Sussybaka
 Makes a sussybaka image with a image url
-
 **Example**
 ```js
 const ultrax = require("ultrax");
@@ -362,11 +348,8 @@ client.on("message", (message) => {
 ### Output
 ![sussybaka](https://cdn.discordapp.com/attachments/716221150929092648/860530758263635978/love.png)
 ## wikipedia
-
 A simple function to allow you to fetch a topic from wikipedia
-
 **Example**
-
 ```js
 // defining the package
 const ultrax = require('ultrax') 
@@ -383,12 +366,71 @@ const  res = new ultrax.Wikipedia({
 
 res.fetch() // fetching the result from wikipedia
 ```
+<<<<<<< Updated upstream
 <br>
 
 # Events:
+=======
+## Remind
+Used in remind command. See `Reminder Event` to see how to detect When a reminder is set of.
+Parameters: 
+- MemberID
+- Time
+- Reason
+  
+**Example**
+```js
+const remind = require("ultrax").remind;
+const time = args[0];
+const reason = args.slice(1).join(" ");
+if (!time) return message.channel.send("Specify Time! e.g `1m`")
+if (!reason) return message.channel.send("Specify Reason! e.g `Going to Market`")
+remind(message.author.id, time, reason);
+message.channel.send("Successfully set a reminder.")
+```
+<br>
+
+# Events:
+## Reminder Event
+This will trigger when someone uses remind command ( [`remind function`](https://www.npmjs.com/package/ultrax#remind) ) And when its time to remind user his message, this will trgger. It has 3 parameters:
+
+- User
+- reason
+- time
+  
+**Example**
+```js
+const Discord = require("discord.js");
+const client = new Discord.Client();
+client.login('TOKEN HERE');
+// ==================================================================
+const ultrax = require("ultrax")
+// Connecting to mongoose'
+ultrax.connectToMongoDB('MONGO DB URL');
+// this will make reminder event work!
+ultrax.remind.startRemind(client);
+//================================================================
+// New Event for Remind function;
+client.on('reminder', (user, reason, time) => {
+	client.users.cache.get(user.id).send(`You asked me \`${time}\` ago to remind you \n \`${reason}\``);
+});
+client.on('message'(message) => {
+	let prefix = '?'
+	let args = message.content.slice(prefix.length).trim().split(/ +/g);
+	let cmd = args.shift().toLowerCase();
+	if (cmd === 'remind') {
+		const time = args[0];
+		const reason = args.slice(1).join(" ");
+		if (!time) return message.channel.send("Specify Time! e.g `1m`")
+		if (!reason) return message.channel.send("Specify Reason! e.g `Going to Market`")
+		remind(message.author.id, time, reason);
+		message.channel.send("Successfully set a reminder.")
+	};
+});
+```
+>>>>>>> Stashed changes
 
 ## Invite Logger Event
-
 This event is for logging invite uses. This is same as [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
 
 - member
