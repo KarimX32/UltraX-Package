@@ -1,8 +1,3 @@
-try {
-    require.resolve("mongoose")
-} catch (e) {
-    throw new Error("[UltraX] => Cannot find module 'mongoose' Please do ' npm i mongoose@latest '")
-}
 const {
     Schema,
     model

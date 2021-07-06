@@ -10,7 +10,7 @@ module.exports = async (memberID, time, reason) => {
         reason: (reason),
         time: (ms(time) + Date.now())
     });
-    data.save().catch(e => console.log("Error saving remind to db \n" + e))
+    data.save().catch(e => console.log("Error saving remind to db"))
 };
 module.exports.startRemind = async (client) => {
     if (!client) throw new Error('[UltraX] Error: Client is not defined in remind function')

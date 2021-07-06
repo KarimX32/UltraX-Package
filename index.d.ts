@@ -31,6 +31,9 @@ export function welcomeImage(background: string, avatar: string, text_1?: string
 
 export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>;
 
+
+export function remind(memberID?: string, reason?: string,  time?: string): Promise<void>;
+
 interface ButtonEmojiOptions {
     id?: string,
     name: string,

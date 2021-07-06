@@ -1,3 +1,4 @@
+const db = require("mongoose");
 const sleep = require('./functions/sleep'),
     passGen = require('./functions/passGen'),
     bin = require('./functions/bin'),
@@ -8,7 +9,8 @@ const sleep = require('./functions/sleep'),
     Wikipedia = require('./classes/wikipedia'),
     sussyBaka = require('./classes/sussybaka'),
     remind = require('./functions/remind'),
-    logger = require('./functions/logger')
+    logger = require('./functions/logger'),
+    sussyBaka = require('./classes/sussybaka')
 
 
 
@@ -21,16 +23,13 @@ module.exports = {
     ButtonPaginator,
     welcomeImage,
     Wikipedia,
-    sussyBaka
+    sussyBaka,
+    connectToMongoDB,
+    remind,
+    logger
 };
 
 function connectToMongoDB(MongoDBURL) {
-    try {
-        require.resolve("mongoose")
-    } catch (e) {
-        throw new Error("[UltraX] => Cannot find module 'mongoose' Please do ' npm i mongoose@latest '")
-    }
-    const db = require("mongoose");
     let connected = true;
     db.connect(MongoDBURL, {
         useNewUrlParser: true,

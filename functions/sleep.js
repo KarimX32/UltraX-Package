@@ -1,9 +1,11 @@
 /**
- * Sleep-based Timeout function
- * @param {Number} milliseconds Sleep time (ms)
+ * SLeep-based Timeout function
+ * @param {Number} ms Sleep time (ms)
  * @returns {Promise<void>}
  */
-module.exports = (ms) => {
+const sleep = (ms) => {
    if (!ms) throw new TypeError("Time isn't specified");
    return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+module.exports = sleep;

@@ -1,21 +1,18 @@
+const Canvas = require("canvas");
 const Discord = require("discord.js");
 
 class sussyBaka {
-    
     /**
+     * @name sussyBaka
+     * @kind constructor
      * @param {String} baka The sussybaka's link, needs to end with .png
-     */
+    */
+
     constructor(baka) {
         this.baka = baka;
     }
 
     async get() {
-        try {
-            require.resolve("canvas")
-        } catch (e) {
-            throw new Error("[UltraX] => Cannot find module 'canvas' Please do ' npm i canvas@latest '")
-        }
-        const Canvas = require("canvas");
         if (!this.baka.endsWith('.png')) throw new Error("Invalid sussybaka's image has been provided");
         const the_canvas = Canvas.createCanvas(128 * 2, 128 * 2);
         const ctx = the_canvas.getContext("2d");
@@ -24,10 +21,14 @@ class sussyBaka {
 
 
         const theSussyBaka = await Canvas.loadImage(this.baka);
-        ctx.drawImage(theSussyBaka, 10, 10, 200, 200);
-        const THESUSSSSS = new Discord.MessageAttachment(the_canvas.toBuffer(), 'sussybaka.png');
-
-        return THESUSSSSS;
+        ctx.beginPath();
+        ctx.arc(100, 100, 90, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(theSussyBaka, 0, 0, 200, 200);
+        return new Discord.MessageAttachment(the_canvas.toBuffer(), 'sussybaka.png');
     }
-}
+};
+
+
 module.exports = sussyBaka;

@@ -45,4 +45,5 @@ module.exports = {
     },
 };
 // we'll add built in console loggers in next update.
+
 //module.exports.error = (e) => console.error(`\x1b[31m(${new Date().toLocaleTimeString()}) - \x1b[1m[ERROR] - \x1b[21m ${e}\x1b[0m`)
