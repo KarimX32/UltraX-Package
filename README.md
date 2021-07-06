@@ -7,8 +7,8 @@
 <div align="center">
 <p>UltraX a unique package that gives you multiple useful usages using functions and events.</p>
 <p>
-    <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
   </p>
   <p>
 <a  href="https://nodei.co/npm/ultrax/"><img  src="https://nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
