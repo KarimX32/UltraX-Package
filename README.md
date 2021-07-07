@@ -55,7 +55,10 @@ $ npm install ultrax
 -  [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
 
 -  [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
+
 -  [`remind()`](https://npmjs.com/package/ultrax#remind) - Function to make remind command 
+
+-  [`daBaby()`](https://npmjs.com/package/ultrax#daBaby) - Function to make a user DaBaby
 
 ### Events:
 
@@ -351,6 +354,25 @@ const  res = new ultrax.Wikipedia({
 
 res.fetch() // fetching the result from wikipedia
 ```
+## daBaby
+
+Simple function to DaBaby a user!
+
+**Example**
+```js
+//defining the package
+const ultrax = require('ultrax')
+client.on("message", async(message) => {
+	if(message.content === "!dababy"){
+    	const daBaby = await ultrax.dababy(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' 	   }));
+	//It will return a Discord attachment!
+	return message.channel.send(daBaby);
+	}
+});
+```
+**OutPut**
+![Image](https://cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
+
 ## Remind
 Used in remind command.
 Parameters: 
