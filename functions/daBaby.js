@@ -20,3 +20,5 @@ module.exports = async function daBaby(url) {
 
     
 }
+
+module.exports = daBaby;
