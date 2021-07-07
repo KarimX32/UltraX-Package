@@ -1,9 +1,9 @@
-const daBaby = require('../../function.js')
+const ultrax = require('ultrax')
 exports.run = async (client, message, args, logger) => {
 
   const member = message.mentions.members.first() || message.member;
 
-  var image = await daBaby(member.user.displayAvatarURL({ format: 'png' }))
+  var image = await ultrax.daBaby(member.user.displayAvatarURL({ format: 'png' }))
   
   message.channel.send(image)
 
