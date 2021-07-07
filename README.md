@@ -358,6 +358,12 @@ res.fetch() // fetching the result from wikipedia
 
 Simple function to DaBaby a user!
 
+The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+
+```js
+await  daBaby()
+```
+
 **Example**
 ```js
 //defining the package
