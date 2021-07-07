@@ -370,7 +370,7 @@ client.on("message", async(message) => {
 	}
 });
 ```
-**OutPut**
+### Output
 ![Image](https://cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
 
 ## Remind
