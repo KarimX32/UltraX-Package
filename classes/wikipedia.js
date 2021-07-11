@@ -38,7 +38,7 @@ class Wikipeida {
           .setColor(this.color)
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
-          .setDescription(`${response.extract} Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`).catch()
+          .setDescription(`${response.extract} Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`)
           this.message.channel.send(embed).catch()
       } else {
         const fullEmbed = new Discord.MessageEmbed()
@@ -50,7 +50,7 @@ class Wikipeida {
         this.message.channel.send(fullEmbed).catch()
       }
     } catch (e) {
-      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")).catch()
+      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
     }
   }
 }
