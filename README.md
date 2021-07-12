@@ -7,8 +7,8 @@
 <div align="center">
 <p>UltraX a unique package that gives you multiple useful usages using functions and events.</p>
 <p>
-    <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://www.npmjs.com/package/discord-buttons"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
   </p>
   <p>
 <a  href="https://nodei.co/npm/ultrax/"><img  src="https://nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
@@ -55,7 +55,10 @@ $ npm install ultrax
 -  [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
 
 -  [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
+
 -  [`remind()`](https://npmjs.com/package/ultrax#remind) - Function to make remind command 
+
+-  [`daBaby()`](https://npmjs.com/package/ultrax#daBaby) - Function to make a user DaBaby
 
 ### Events:
 
@@ -351,6 +354,31 @@ const  res = new ultrax.Wikipedia({
 
 res.fetch() // fetching the result from wikipedia
 ```
+## daBaby
+
+Simple function to DaBaby a user!
+
+The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+
+```js
+await  daBaby()
+```
+
+**Example**
+```js
+//defining the package
+const ultrax = require('ultrax')
+client.on("message", async(message) => {
+	if(message.content === "!dababy"){
+    	const daBaby = await ultrax.dababy(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' 	   }));
+	//It will return a Discord attachment!
+	return message.channel.send(daBaby);
+	}
+});
+```
+### Output
+![Image](https://cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
+
 ## Remind
 Used in remind command.
 Parameters: 

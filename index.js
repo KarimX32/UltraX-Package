@@ -9,7 +9,8 @@ const sleep = require('./functions/sleep'),
     Wikipedia = require('./classes/wikipedia'),
     sussyBaka = require('./classes/sussybaka'),
     remind = require('./functions/remind'),
-    logger = require('./functions/logger')
+    logger = require('./functions/logger'),
+    daBaby = require('./functions/daBaby')
 
 _checkUpdate()
 module.exports = {
@@ -23,7 +24,8 @@ module.exports = {
     sussyBaka,
     connectToMongoDB,
     remind,
-    logger
+    logger,
+    daBaby
 };
 
 function connectToMongoDB(MongoDBURL) {

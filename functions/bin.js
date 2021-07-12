@@ -18,7 +18,7 @@ module.exports = async (code, edit = true) => {
     params.append('content', code);
     params.append('edible', editable);
     if (edit === false) params.append('edible', 1);
-    let a = await require("node-fetch")("https://pocket-inc.ml/bin/api/create.php", {
+    let a = await require("node-fetch")("https://pocket-inc.com/bin/api/create.php", {
         body: params,
         method: 'post'
     }).then(r => {
