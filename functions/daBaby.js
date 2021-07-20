@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const Canvas = require('canvas')
 /**
  * Create a daBaby image from a URL for a Discord.js Bot
  * @param {String} person_url The "dababy"
@@ -7,6 +6,13 @@ const Canvas = require('canvas')
  */
 
 module.exports = async function daBaby(url) {
+try {
+        require.resolve("canvas")
+    } catch (e) {
+        throw new Error("[UltraX] => Cannot find module 'canvas' Please do ' npm i canvas@latest '")
+    }
+
+const Canvas = require('canvas')
     if (!url) throw new TypeError("Dababy: No url provided");
 
     const canvas = Canvas.createCanvas(320, 320);
