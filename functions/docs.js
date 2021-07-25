@@ -1,11 +1,11 @@
 const fetch = require("node-fetch");
 
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed, Message } = require("discord.js")
 /**
  * Search the Discord.js Docs for a query
  * @param {String} query, query for the search
  * @param {String} branch, branch for the search
- * @param {String} message, Discord Message 
+ * @param {Message} message, Discord Message 
  * @returns {Promise<MessageEmbed>}
  */
 
