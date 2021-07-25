@@ -22,7 +22,7 @@ module.exports = async function buttonss(content, options, client, message) {
     }
 
     /**
-     * @type {{ type: number; style: number | undefined; label: any; custom_id: any; emoji: { name: null; id: null; animated: boolean; }; url: any; }[]}
+     * @type {Array<Object>}
      */
     let buttons = [];
     let styles = ['blurple', 'grey', 'green', 'red', 'url'];
