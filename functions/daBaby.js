@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 /**
  * Create a daBaby image from a URL for a Discord.js Bot
- * @param {String} person_url The "dababy"
+ * @param {String} url The "dababy"
  *@returns {Discord.MessageAttachment}
  */
 

@@ -161,7 +161,7 @@ exports.conf = {
 }
 
 function clean(string) {
-  if (typeof text === "string") {
+  if (typeof string === "string") {
     return string.replace(/`/g, "`" + String.fromCharCode(8203))
       .replace(/@/g, "@" + String.fromCharCode(8203))
   } else {
