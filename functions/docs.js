@@ -1,14 +1,13 @@
 const fetch = require("node-fetch");
-
 const { MessageEmbed, Message } = require("discord.js")
+
 /**
  * Search the Discord.js Docs for a query
- * @param {String} query, query for the search
- * @param {String} branch, branch for the search
- * @param {Message} message, Discord Message 
+ * @param {String} query query for the search
+ * @param {String} branch branch for the search
+ * @param {Message} message Discord Message 
  * @returns {Promise<MessageEmbed>}
  */
-
 module.exports = async function docs(query, branch, message) {
 
 fetch(`https://djsdocs.sorta.moe/v2/embed?src=${branch}&q=${encodeURIComponent(query)}`)
