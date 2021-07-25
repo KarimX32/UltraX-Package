@@ -18,6 +18,6 @@ fetch(`https://djsdocs.sorta.moe/v2/embed?src=${branch}&q=${encodeURIComponent(q
        return message.channel.send({ embed: json });
       })
       .catch(() => {
-        return message.channel.send(`:x: | An unexpected err accrued`)
+        return message.channel.send(`:x: | An unexpected err occurred`)
       });
 }
