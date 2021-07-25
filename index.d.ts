@@ -1,9 +1,17 @@
-import { Client, MessageAttachment, MessageEmbed, Message, ColorResolvable } from "discord.js";
+import { Client, MessageAttachment, MessageEmbed, Message, ColorResolvable, Snowflake } from "discord.js";
 
 /**
  * Code and detailed explanation for UltraX package
  */
 declare module "ultrax";
+
+export class sussyBaka {
+
+    constructor(baka: string);
+
+    public get(): Promise<MessageAttachment>;
+
+}
 
 export class Wikipedia {
 
@@ -12,27 +20,26 @@ export class Wikipedia {
     public fetch(): Promise<void>;
 
 }
-export class sussyBaka {
-
-    constructor(baka: string);
-
-    public get(): Promise<MessageAttachment>;
-
-}
-export function sleep(milliseconds: number): Promise<void>;
-
-export function passGen(Length: number): string;
-
-export function inviteLogger(client: Client): Promise<void>;
 
 export function bin(code: string): Promise<string>;
 
-export function welcomeImage(background: string, avatar: string, text_1?: string, text_2?: string, text_3?: string, color?: string, settings?: WelcomeImageSettingOptions): Promise<MessageAttachment>;
-
 export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>;
 
+export function connectToMongoDB(MongoDBURI: string): Promise<void>
 
-export function remind(memberID?: string, reason?: string,  time?: string): Promise<void>;
+export function daBaby(url: string): Promise<void>;
+
+export function docs(query: string, branch: string, )
+
+export function inviteLogger(client: Client): Promise<void>;
+
+export function passGen(Length: number): string;
+
+export function remind(memberID: Snowflake, time: string, reason: string): Promise<void>;
+
+export function sleep(milliseconds: number): Promise<void>;
+
+export function welcomeImage(background: string, avatar: string, text_1?: string, text_2?: string, text_3?: string, color?: string, settings?: WelcomeImageSettingOptions): Promise<MessageAttachment>;
 
 interface ButtonEmojiOptions {
     id?: string,
