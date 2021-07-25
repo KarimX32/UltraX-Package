@@ -1,5 +1,14 @@
-const schema = require("./schema/remind")
-const ms = require("./non-public-functions/ms")
+const Discord = require("discord.js");
+const schema = require("./schema/remind");
+const ms = require("./non-public-functions/ms");
+
+/**
+ * Reminds a Guild Member
+ * @param {Discord.Snowflake} memberID The ID of the member
+ * @param {Number} time The reminder time
+ * @param {String} reason The reminder
+ * @returns {Promise<void>}
+ */
 module.exports = async (memberID, time, reason) => {
     if (!memberID) throw new Error('[UltraX] Error: Member is not defined in remind function')
     if (!time) throw new Error('[UltraX] Error: Time is not defined in remind function')
@@ -13,6 +22,12 @@ module.exports = async (memberID, time, reason) => {
     });
     data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
 };
+
+/**
+ * Fetch and reminds a Guild Member
+ * @param {Discord.Client} client Discord Client
+ * @returns {Promise<void>}
+ */
 module.exports.startRemind = async (client) => {
     if (!client) throw new Error('[UltraX] Error: Client is not defined in remind function')
     setInterval(() => {
@@ -28,6 +43,12 @@ module.exports.startRemind = async (client) => {
         });
     }, 10000); // 10000 milsec
 }
+
+/**
+ * Parse a ms
+ * @param {number} ms 
+ * @returns {Promise<String>}
+ */
 async function parseMS(ms) {
     if(typeof ms == "number"){
         let seconds = ms / 1000,
