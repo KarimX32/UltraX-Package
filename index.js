@@ -28,9 +28,14 @@ module.exports = {
     daBaby
 };
 
-function connectToMongoDB(MongoDBURL) {
+/**
+ * Connect to MongoDB Server
+ * @param {String} MongoDBURI The MongoDB URI
+ * @returns {Promise<void>}
+ */
+function connectToMongoDB(MongoDBURI) {
     let connected = true;
-    db.connect(MongoDBURL, {
+    db.connect(MongoDBURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).catch(e => {
