@@ -16,7 +16,7 @@ module.exports = async (code, edit = true) => {
     // initilizes params from nodejs 'url' npm
     const params = (new(require("url").URLSearchParams)());
     params.append('content', code);
-    params.append('edible', editable);
+    params.append('edible', editable.toString());
     if (edit === false) params.append('edible', 1);
     let a = await require("node-fetch")("https://pocket-inc.com/bin/api/create.php", {
         body: params,

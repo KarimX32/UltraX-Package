@@ -21,6 +21,9 @@ module.exports = async function buttonss(content, options, client, message) {
         throw new Error('The buttons must be an array');
     }
 
+    /**
+     * @type {Array<Object>}
+     */
     let buttons = [];
     let styles = ['blurple', 'grey', 'green', 'red', 'url'];
 

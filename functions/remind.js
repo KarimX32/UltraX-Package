@@ -9,7 +9,7 @@ module.exports = async (memberID, time, reason) => {
         memberID: (memberID),
         reason: (reason),
         time: (ms(time) + Date.now()),
-            timeMS: ms(time)
+        timeMS: ms(time)
     });
     data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
 };
@@ -29,15 +29,17 @@ module.exports.startRemind = async (client) => {
     }, 10000); // 10000 milsec
 }
 async function parseMS(ms) {
-    let seconds = ms / 1000,
-        days = parseInt(seconds / 86400);
+    if(typeof ms == "number"){
+        let seconds = ms / 1000,
+
+        days = seconds / 86400;
     seconds = seconds % 86400
 
-    let hours = parseInt(seconds / 3600);
+    let hours = seconds / 3600;
     seconds = seconds % 3600
 
-    let minutes = parseInt(seconds / 60);
-    seconds = parseInt(seconds % 60)
+    let minutes = seconds / 60;
+    seconds = seconds % 60;
 
     if (days) {
         return `${days} day, ${hours} hours, ${minutes} minutes`
@@ -48,4 +50,8 @@ async function parseMS(ms) {
     }
 
     return `${seconds} second(s)`
+    } else {
+        return null;
+    }
+    
 };
