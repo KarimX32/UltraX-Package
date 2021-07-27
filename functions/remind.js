@@ -37,7 +37,7 @@ module.exports.startRemind = async (client) => {
                 if (doc.time <= Date.now()) {
                     await schema.deleteOne(doc);
                     await client.users.fetch(doc.memberID);
-                    client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await parseMS(doc.timeMS))
+                    client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await parseMS(doc.timeMS), doc.timeMS)
                 };
             });
         });
