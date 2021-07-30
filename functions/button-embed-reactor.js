@@ -1,39 +1,168 @@
-const buttonss = require("./non-public-functions/buttons")
-const Discord = require("discord.js");
+const {
+    MessageButton
+} = require('discord-buttons')
+const validStyles = [
+    "gray",
+    "red",
+    "green",
+    "blurple"
+]
 
 /**
- * A button paginator
- * @param {String} message The main message content
- * @param {Discord.MessageEmbed[]} pages An array of embeds
- * @param {Object} [buttons] An array of message components (buttons)
- * @param {Number} [time] The timeout
+ * button pagination
+ * @param {options} 
  */
-async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
-    if (!message) throw new ReferenceError('EmbedPages => "message" is not defined')
-    if (!pages || typeof pages !== 'object') throw new SyntaxError('EmbedPages => Invalid form body [pages]')
-    if (message.guild.me.hasPermission('MANAGE_MESSAGES')) {
-        let msg = await buttonss(`Page 1 / ${pages.length}`, {
-            buttons: buttons,
-            embed: pages[0]
-        }, message.client, message).then(a => {
-            return {
-                id: a.id,
-                channelID: a.channel_id,
-                uid: a.author.id
-            };
-        });
-        message.client.on('clickButton', button => {
-            if (msg.uid === button.message.author.id) {
-                let i = button.message.content.split("Page")[1].split("/")[0] - 1;
-                if (button.id == "back") {
-                    if (i !== 0) i--;
-                } else if (button.id == "next") {
-                    if (i !== pages.length - 1) i++;
-                }
-                if (message.client.channels.cache.get(msg.channelID).messages.cache.get(msg.id).author.id == message.client.user.id) message.client.channels.cache.get(msg.channelID).messages.cache.get(msg.id).edit(`Page ${i + 1} / ${pages.length}`, pages[i])
-            }
-        });
-    };
-};
+module.exports = async function Pagination(options) {
 
-module.exports = ButtonPaginator;
+    if (!options.message) {
+        throw new Error("[UltraX-error] Please provide a message for the button pagination!")
+    }
+    if (!options.embeds) {
+        throw new Error("[UltraX-error] Please provide an array of embeds to paginate!")
+    }
+
+    if(options.embeds.length == 1) {
+        throw new Error("[UltraX-error] Cannot paginate 1 embed!")
+    }
+
+    if (!options.button1) options.button1 = {};
+    if (typeof options.button1 !== 'object') {
+        throw new Error("[UltraX-error] Button1 must be an object");
+    }
+
+    if (!options.button1.label) {
+        throw new Error("[UltraX-error] Missing field Label for Button1")
+    }
+
+    if (!options.button1.style) {
+        throw new Error("[UltraX-error] Missing field style for Button1")
+    }
+
+    if (!validStyles.includes(options.button1.style)) {
+        throw new Error(`[UltraX-error] invalid style field for button1, must be ${validStyles}`)
+    }
+    // button2 
+
+    if (!options.button2) options.button2 = {};
+    if (typeof options.button2 !== 'object') {
+        throw new Error("[UltraX-error] Button2 must be an object");
+    }
+
+    if (!options.button2.label) {
+        throw new Error("[UltraX-error] Missing field Label for Button2")
+    }
+
+    if (!options.button2.style) {
+        throw new Error("[UltraX-error] Missing field style for Button2")
+    }
+
+    if (!validStyles.includes(options.button2.style)) {
+        throw new Error(`[UltraX-error] invalid style field for button2, must be ${validStyles}`)
+    }
+
+    if (!options.timeActive) {
+        throw new Error("[UltraX-error] missing field timeActive")
+    }
+
+    if (typeof options.timeActive !== "number") {
+        throw new Error("[UltraX-error] timeActive must be a number!")
+    }
+
+    if (!options.setDisabled) {
+        throw new Error("[UltraX-error] missing field setDisabled")
+    }
+
+    if (typeof options.setDisabled !== "boolean") {
+        throw new Error("[UltraX-error] setDisbaled must be a boolean")
+    }
+
+    if (!options.invalidUser) {
+        throw new Error("[UltraX-error] missing field invalidUser")
+    }
+    if (!options.invalidUser) options.invalidUser = {};
+    if (typeof options.invalidUser !== 'object') {
+        throw new Error("[UltraX-error] invalidUser must be an object");
+    }
+    if(!options.invalidUser.ephemeralReply) {
+        throw new Error("[UltraX-error] missing field ephemeralReply")
+    }
+    
+    if (typeof options.invalidUser.ephemeralReply !== "boolean") {
+        throw new Error("[UltraX-error] ephemeralReply message must be a boolean")
+    }
+
+    if(!options.invalidUser.message) {
+        throw new Error("[UltraX-error] missing field invalidUser message")
+    }
+
+    if (typeof options.invalidUser.message !== "string") {
+        throw new Error("[UltraX-error] invalidUser message must be a string")
+    }
+
+    let button1 = new MessageButton()
+        .setLabel(options.button1.label)
+        .setStyle(options.button1.style)
+        .setID('forward')
+
+    let button2 = new MessageButton()
+        .setLabel(options.button2.label)
+        .setStyle(options.button2.style)
+        .setID('back')
+    
+    let currentPage = 0;
+
+    const embeds = options.embeds
+
+    const message = options.message
+
+    let sussyEmbed = await message.channel.send({
+        buttons: [button1, button2],
+        embed: embeds[currentPage]
+      })
+
+      
+    const filter = (button) => button.clicker.user.id === message.author.id;
+    const collector = sussyEmbed.createButtonCollector(filter, {
+      time: options.timeActive
+    });
+
+    collector.on('collect', async b => {
+        await b.reply.defer()
+        if(b.clicker.user.id !== message.author.id) {
+            if(options.invalidUser.ephemeralReply == true) {
+                b.reply.send(options.invalidUser.message, true)
+            } else {
+                message.channel.send(options.invalidUser.message)
+            }
+        }
+        if (b.id === 'back') {
+          if (currentPage < embeds.length - 1) {
+            currentPage += 1;
+            sussyEmbed.edit({
+              buttons: [button1, button2],
+              embed: embeds[currentPage]
+            })
+  
+          }
+        } else if (b.id === 'forward') {
+          if (currentPage !== 0) {
+            currentPage -= 1;
+            sussyEmbed.edit({
+              buttons: [button1, button2],
+              embed: embeds[currentPage]
+            })
+          }
+        }
+    })
+
+    if(options.setDisabled == true) {
+        setTimeout(() => {
+            let b1 = button1.setDisabled()
+            let b2 = button2.setDisabled()
+            sussyEmbed.edit({
+              embed: embeds[currentPage],
+              buttons: [b1, b2],
+            })
+          }, options.timeActive)
+    }
+ }
