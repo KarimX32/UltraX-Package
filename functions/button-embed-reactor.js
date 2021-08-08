@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 /**
  * A button paginator
- * @param {String} message The main message content
+ * @param {Discord.Message} message The main message content
  * @param {Discord.MessageEmbed[]} pages An array of embeds
  * @param {Object} [buttons] An array of message components (buttons)
  * @param {Number} [time] The timeout
@@ -11,7 +11,7 @@ const Discord = require("discord.js");
 async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
     if (!message) throw new ReferenceError('EmbedPages => "message" is not defined')
     if (!pages || typeof pages !== 'object') throw new SyntaxError('EmbedPages => Invalid form body [pages]')
-    if (message.guild.me.hasPermission('MANAGE_MESSAGES')) {
+    if (message.guild.me?.permissions.has('MANAGE_MESSAGES')) {
         let msg = await buttonss(`Page 1 / ${pages.length}`, {
             buttons: buttons,
             embed: pages[0]
@@ -30,7 +30,7 @@ async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
                 } else if (button.id == "next") {
                     if (i !== pages.length - 1) i++;
                 }
-                if (message.client.channels.cache.get(msg.channelID).messages.cache.get(msg.id).author.id == message.client.user.id) message.client.channels.cache.get(msg.channelID).messages.cache.get(msg.id).edit(`Page ${i + 1} / ${pages.length}`, pages[i])
+                if (message.client.channels.cache.get(msg.channelID)?.messages.cache.get(msg.id).author.id == message.client.user.id) message.client.channels.cache.get(msg.channelID).messages.cache.get(msg.id).edit(`Page ${i + 1} / ${pages.length}`, pages[i])
             }
         });
     };

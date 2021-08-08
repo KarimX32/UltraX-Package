@@ -24,7 +24,7 @@ async function inviteLogger(client) {
     client.on('guildMemberAdd', member => {
         try {
             // To compare, we need to load the current invite list.
-            member.guild.fetchInvites().then(async guildInvites => {
+            member.guild.invites.fetch().then(async guildInvites => {
                 // This is the *existing* invites for the guild.
                 const ei = invites[member.guild.id];
                 // Update the cached invites for the guild.
