@@ -14,7 +14,7 @@ fetch(`https://djsdocs.sorta.moe/v2/embed?src=${branch}&q=${encodeURIComponent(q
       .then(res => res.json())
       .then(json => {
         if (!json) return message.chanel.send(`:x: | No results for ${query}`)
-       return message.channel.send({ embed: json });
+       return message.channel.send({ embeds: [json] });
       })
       .catch(() => {
         return message.channel.send(`:x: | An unexpected err occurred`)
