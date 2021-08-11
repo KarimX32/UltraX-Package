@@ -10,7 +10,9 @@ const sleep = require('./functions/sleep'),
     sussyBaka = require('./classes/sussybaka'),
     remind = require('./functions/remind'),
     logger = require('./functions/logger'),
-    daBaby = require('./functions/daBaby')
+    daBaby = require('./functions/daBaby'),
+    boostImage = require('./functions/boostImage'),
+    boost = require('./functions/boost')
 
 _checkUpdate()
 module.exports = {
@@ -25,7 +27,9 @@ module.exports = {
     connectToMongoDB,
     remind,
     logger,
-    daBaby
+    daBaby,
+    boostImage,
+    boost
 };
 
 /**
