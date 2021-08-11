@@ -41,6 +41,10 @@ export function sleep(milliseconds: number): Promise<void>;
 
 export function welcomeImage(background: string, avatar: string, text_1?: string, text_2?: string, text_3?: string, color?: string, settings?: WelcomeImageSettingOptions): Promise<MessageAttachment>;
 
+export function boostImage(url: string): Promise<string>;
+
+export function start(client: object, boostRoleID: Snowflake): Promise<void>;
+
 interface ButtonEmojiOptions {
     id?: string,
     name: string,
