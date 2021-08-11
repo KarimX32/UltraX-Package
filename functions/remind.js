@@ -1,5 +1,14 @@
-const schema = require("./schema/remind")
-const ms = require("./non-public-functions/ms")
+const Discord = require("discord.js");
+const schema = require("./schema/remind");
+const ms = require("./non-public-functions/ms");
+
+/**
+ * Reminds a Guild Member
+ * @param {Discord.Snowflake} memberID The ID of the member
+ * @param {Number} time The reminder time
+ * @param {String} reason The reminder
+ * @returns {Promise<void>}
+ */
 module.exports = async (memberID, time, reason) => {
     if (!memberID) throw new Error('[UltraX] Error: Member is not defined in remind function')
     if (!time) throw new Error('[UltraX] Error: Time is not defined in remind function')
@@ -9,10 +18,16 @@ module.exports = async (memberID, time, reason) => {
         memberID: (memberID),
         reason: (reason),
         time: (ms(time) + Date.now()),
-            timeMS: ms(time)
+        timeMS: ms(time)
     });
     data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
 };
+
+/**
+ * Fetch and reminds a Guild Member
+ * @param {Discord.Client} client Discord Client
+ * @returns {Promise<void>}
+ */
 module.exports.startRemind = async (client) => {
     if (!client) throw new Error('[UltraX] Error: Client is not defined in remind function')
     setInterval(() => {
@@ -22,22 +37,30 @@ module.exports.startRemind = async (client) => {
                 if (doc.time <= Date.now()) {
                     await schema.deleteOne(doc);
                     await client.users.fetch(doc.memberID);
-                    client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await parseMS(doc.timeMS))
+                    client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await parseMS(doc.timeMS), doc.timeMS)
                 };
             });
         });
     }, 10000); // 10000 milsec
 }
+
+/**
+ * Parse a ms
+ * @param {number} ms 
+ * @returns {Promise<String>}
+ */
 async function parseMS(ms) {
-    let seconds = ms / 1000,
-        days = parseInt(seconds / 86400);
+    if(typeof ms == "number"){
+        let seconds = ms / 1000,
+
+        days = seconds / 86400;
     seconds = seconds % 86400
 
-    let hours = parseInt(seconds / 3600);
+    let hours = seconds / 3600;
     seconds = seconds % 3600
 
-    let minutes = parseInt(seconds / 60);
-    seconds = parseInt(seconds % 60)
+    let minutes = seconds / 60;
+    seconds = seconds % 60;
 
     if (days) {
         return `${days} day, ${hours} hours, ${minutes} minutes`
@@ -48,4 +71,8 @@ async function parseMS(ms) {
     }
 
     return `${seconds} second(s)`
+    } else {
+        return null;
+    }
+    
 };
