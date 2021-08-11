@@ -43,7 +43,7 @@ export function welcomeImage(background: string, avatar: string, text_1?: string
 
 export function boostImage(url: string): Promise<string>;
 
-export function start(client: object, boostRoleID: Snowflake): Promise<void>;
+export function start(client: Client, boostRoleID: Snowflake): Promise<void>;
 
 interface ButtonEmojiOptions {
     id?: string,
