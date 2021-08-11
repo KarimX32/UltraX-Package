@@ -67,7 +67,7 @@ $ npm install ultrax
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
 - [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) It Triggers when someone used remind function and its time to remind user. 
 
-- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 <hr>
 <br>
@@ -565,8 +565,8 @@ client.on('boost', async booster => {
 	// Define your boost channel
 	const boostchannel = client.channels.cache.get('12345678910111213141516') // <- the id of your BoostChannel
 
-	// Send message to your BoostChannel
-	channel.send({ content: `${booster} boosted the server!` })
+	// Send message to your boostchannel
+	boostchannel.send({ content: `${booster} boosted the server!` })
 })
 ```
 
