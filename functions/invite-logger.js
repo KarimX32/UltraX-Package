@@ -16,12 +16,12 @@ async function inviteLogger(client) {
 
         // Load all invites for all guilds and save them to the cache.
         client.guilds.cache.forEach(g => {
-            g.fetchInvites().then(guildInvites => {
+            g.invites.fetch().then(guildInvites => {
                 invites[g.id] = guildInvites;
             });
         });
     });
-    client.on('guildMemberAdd', member => {
+    client.on('guildMemberAdd', /** @type {Discord.GuildMember}*/ member => {
         try {
             // To compare, we need to load the current invite list.
             member.guild.invites.fetch().then(async guildInvites => {
@@ -31,7 +31,7 @@ async function inviteLogger(client) {
                 invites[member.guild.id] = guildInvites;
                 if (!ei) return;
                 //  Look through the invites, find the one for which the uses went up.
-                await member.guild.fetchInvites().catch(() => undefined);
+                await member.guild.invites.fetch().catch(() => undefined);
                 const invite = guildInvites.find(i => {
                     const a = ei.get(i.code);
                     if (!a) return;
