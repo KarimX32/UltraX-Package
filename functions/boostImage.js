@@ -6,12 +6,6 @@ const Discord = require("discord.js");
  * @returns {String} The image link
  */
 module.exports = async function boostImage(url) {
-    try {
-        require.resolve("node-fetch")
-    } catch (err) {
-        throw new Error("Cannot find module 'node-fetch'")
-    }
-    const fetch = require('node-fetch')
     if (!url) throw new SyntaxError("Missing the parameter 'url'");
     let defaultpfps = [
         "https://media.discordapp.net/attachments/833275305812426772/874575015054569482/yhye4cosb7271.png",

@@ -1,6 +1,4 @@
 const Discord = require("discord.js");
-const schema = require("./schema/remind");
-const ms = require("./non-public-functions/ms");
 
 /**
  * Starts a boost event
@@ -14,7 +12,7 @@ module.exports.start = async (client, boostRoleID) => {
 
     client.on('guildMemberUpdate', async (oldMember, newMember) => {
 
-        if (!oldMember.roles.cache.some(role => role.id === '874916368850513951') && newMember.roles.cache.some(role => role.id === '874916368850513951')) {
+        if (!oldMember.roles.cache.some(role => role.id === boostRoleID) && newMember.roles.cache.some(role => role.id === boostRoleID)) {
             client.emit('boost', newMember)
         }
     });
