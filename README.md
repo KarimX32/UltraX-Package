@@ -60,10 +60,14 @@ $ npm install ultrax
 
 -  [`daBaby()`](https://npmjs.com/package/ultrax#daBaby) - Function to make a user DaBaby
 
+- [`boostImage()`](https://npmjs.com/package/ultrax#boostImage) - Function that creates a booster card.
+
 ### Events:
 
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
 - [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) It Triggers when someone used remind function and its time to remind user. 
+
+- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 <hr>
 <br>
@@ -379,6 +383,64 @@ client.on("message", async(message) => {
 ### Output
 ![Image](https://cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
 
+## boostImage
+
+Function that creates a booster card.
+
+The function returns a [Promise(\<String\>)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
+
+
+### Parameter(s)
+| Parameter | Description                                                                         | Type                    | Position |
+|-----------|-------------------------------------------------------------------------------------|-------------------------|----------|
+| url       | The image url of the booster!                                                       | string                  | 1        |
+
+```js
+boostImage(url)
+```
+
+**Example**
+```js
+// Defining the package
+const ultrax = require('ultrax')
+
+// Defining the function
+const boostImage = ultrax.boostImage
+
+// Defining the boosters avatar :
+let avatar = user.displayAvatarURL()
+//            ^ change 'user' to the user that boosted the server 
+
+// Generating the booster card
+boostImage(avatar)
+
+
+
+
+// Send the boostImage in a embed
+const discord = require('discord.js')
+
+let embed = new discord.MessageEmbed()
+	.setTitle('Boost Card!')
+// To add boosterCard to .setImage() :
+	.setImage(boostCard)
+// To add boosterCard to .setThumbnail() :
+	.setThumbnail(boostCard)
+channel.send({ embeds: [embed] })
+// ^ change 'channel' to the channel you want he sends the embed to
+
+
+
+
+// Send boostImage in a message:
+
+channel.send({ content: 'Booster Card!', files: [ img ] })
+// ^ change 'channel' to the channel you want he send the message to
+```
+### Output
+![Image](https://i.imgur.com/UgVTWda.png)
+![Image](https://i.imgur.com/yTrD8Uf.png)
+
 ## Remind
 Used in remind command.
 Parameters: 
@@ -466,6 +528,55 @@ console.log(`${member.user.tag} joined using invite code ${invite.code} from ${i
 
 > `ultrax.inviteLogger(client) 
 ` put here your discord client. without it, the event won't emit.
+
+## Boost Event
+
+This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+
+**Function:**
+
+start(client, boosterRoleID)
+
+**Parameters:**
+
+| Parameter     | Description                              | Type             | Position |
+|---------------|------------------------------------------|------------------|----------|
+| client        | The client object                        | object           | 1        |
+| BoosterRoleID | The ID of the booster role in the server | string/Snowflake | 2        |
+
+**Example:**
+
+
+```js
+// Defining Discord.js
+const discord = require('discord.js')
+
+// Making your Client
+const client = new Discord.Client({ intents: [ Discord.Intents.FLAGS.your_intents ... ] })
+
+// Defining the package
+const ultrax = require('ultrax')
+
+// Import the event to your client and pass the booster role ID.
+ultrax.boost.start(client, '12345678910111213141516') // <- the id of your BoostRole
+
+// Make the event
+client.on('boost', async booster => {
+	// Define your boost channel
+	const boostchannel = client.channels.cache.get('12345678910111213141516') // <- the id of your BoostChannel
+
+	// Send message to your BoostChannel
+	channel.send({ content: `${booster} boosted the server!` })
+})
+```
+
+> 🤫 | **PS:** You can use [boostImage()](https://npmjs.com/package/ultrax#boostImage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
+
+### Output:
+
+![Image](https://i.imgur.com/ccrvBIf.png)
+
+<br>
 
 -----
 
