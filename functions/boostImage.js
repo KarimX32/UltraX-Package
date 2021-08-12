@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 /**
  * Create a boost card for Discord bots using discord.js
  * @param {String} url The avatar url
@@ -7,16 +5,18 @@ const Discord = require("discord.js");
  */
 module.exports = async function boostImage(url) {
     if (!url) throw new SyntaxError("Missing the parameter 'url'");
-    let defaultpfps = [
-        "https://media.discordapp.net/attachments/833275305812426772/874575015054569482/yhye4cosb7271.png",
-        "https://media.discordapp.net/attachments/833275305812426772/874575202741284924/pAAAAAElFTkSuQmCC.png",
-        "https://media.discordapp.net/attachments/833275305812426772/874580919216926760/enpFjYEafaA8OZAAAAAAGVvf46sAAAAAAAAAAAAAAAAAAAAAAFYCeHSjWah9hFcAAAAASUVORK5CYII.png",
-        "https://media.discordapp.net/attachments/833275305812426772/874589430692872192/1Pb4KAAAAAAAAAAAAAAAAAAAAAGAlB3yyZnlY4UQAAAAASUVORK5CYII.png"
-    ];
-
-    let defaultpfp = defaultpfps[Math.floor(Math.random() * defaultpfps.length)];
+    let defaultpfps = {
+        "0": "https://media.discordapp.net/attachments/833275305812426772/875249964144533564/0.png",
+        "1": "https://media.discordapp.net/attachments/833275305812426772/875250005022216252/1.png",
+        "2": "https://media.discordapp.net/attachments/833275305812426772/875250057895612416/2.png",
+        "3": "https://media.discordapp.net/attachments/833275305812426772/875250096990748713/3.png",
+        "4": "https://media.discordapp.net/attachments/833275305812426772/875250146902933524/4.png",
+        "5": "https://media.discordapp.net/attachments/833275305812426772/875250233506951188/5.png"
+    };
 
     if (url.startsWith('https://cdn.discordapp.com/embed/avatars/')) {
+        let number = url.split("https://cdn.discordapp.com/embed/avatars/").join("").split('.png').join('')
+        let defaultpfp = defaultpfps[number]
         return `https://frenchnoodles.xyz/api/endpoints/boostercard/?image=${defaultpfp}`
     } else {
         return `https://frenchnoodles.xyz/api/endpoints/boostercard/?image=${url}`
