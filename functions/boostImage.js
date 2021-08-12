@@ -1,7 +1,7 @@
 /**
  * Create a boost card for Discord bots using discord.js
  * @param {String} url The avatar url
- * @returns {String} The image link
+ * @returns {Promise<string>} The image link
  */
 module.exports = async function boostImage(url) {
     if (!url) throw new SyntaxError("Missing the parameter 'url'");
@@ -13,7 +13,7 @@ module.exports = async function boostImage(url) {
         "4": "https://media.discordapp.net/attachments/833275305812426772/875250146902933524/4.png",
         "5": "https://media.discordapp.net/attachments/833275305812426772/875250233506951188/5.png"
     };
-
+    
     if (url.startsWith('https://cdn.discordapp.com/embed/avatars/')) {
         let number = url.split("https://cdn.discordapp.com/embed/avatars/").join("").split('.png').join('')
         let defaultpfp = defaultpfps[number]

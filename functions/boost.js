@@ -1,7 +1,10 @@
+const Discord = require("discord.js")
+
+
 /**
  * Starts a boost event
  * @param {Discord.Client} client Your client
- * @param {Snowflake} boostRoleID The ID of the booster role in the server
+ * @param {Discord.Snowflake} boostRoleID The ID of the booster role in the server
  * @returns {Promise<void>}
  */
 
