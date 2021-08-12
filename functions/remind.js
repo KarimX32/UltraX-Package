@@ -13,12 +13,12 @@ module.exports = async (memberID, time, reason) => {
     if (!memberID) throw new Error('[UltraX] Error: Member is not defined in remind function')
     if (!time) throw new Error('[UltraX] Error: Time is not defined in remind function')
     if (!reason) throw new Error('[UltraX] Error: Reason is not defined in remind function')
-    if (!ms(time)) throw new Error('[UltraX] Error: Time is invalid in remind function')
+    if (!ms(time.toString())) throw new Error('[UltraX] Error: Time is invalid in remind function')
     const data = new schema({
         memberID: (memberID),
         reason: (reason),
-        time: (ms(time) + Date.now()),
-        timeMS: ms(time)
+        time: (ms(time) + Date.now()), //Illegal turn here btw
+        timeMS: ms(time.toString())
     });
     data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
 };
