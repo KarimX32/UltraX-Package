@@ -27,7 +27,7 @@ export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?
 
 export function connectToMongoDB(MongoDBURI: string): Promise<void>
 
-export function daBaby(url: string): Promise<void>;
+export function daBaby(url: string): Promise<MessageAttachment>;
 
 export function docs(query: string, branch: string, )
 
