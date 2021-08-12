@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 /**
  * Create a daBaby image from a URL for a Discord.js Bot
  * @param {String} url The "dababy"
- *@returns {Discord.MessageAttachment}
+ *@returns {Promise<Discord.MessageAttachment>}
  */
 
 module.exports = async function daBaby(url) {
