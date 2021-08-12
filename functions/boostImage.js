@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 /**
  * Create a boost card for Discord bots using discord.js
  * @param {String} url The avatar url
