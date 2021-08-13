@@ -39,7 +39,7 @@ class Wikipeida {
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
           .setDescription(`${response.extract} Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`)
-          this.message.channel.send(embed).catch()
+        this.message.channel.send({ embeds: [embed] }).catch()
       } else {
         const fullEmbed = new Discord.MessageEmbed()
           .setTitle(response.title)
@@ -47,10 +47,10 @@ class Wikipeida {
           .setURL(response.content_urls.desktop.page)
           .setThumbnail(response.thumbnail.source)
           .setDescription(response.extract)
-        this.message.channel.send(fullEmbed).catch()
+        this.message.channel.send({ embeds: [fullEmbed] }).catch()
       }
     } catch (e) {
-      this.message.channel.send(new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED"))
+      this.message.channel.send({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
     }
   }
 }
