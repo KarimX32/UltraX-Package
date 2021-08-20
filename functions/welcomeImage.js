@@ -25,7 +25,7 @@ module.exports = async function welcomeImage(background, avatar, text_1, text_2,
     if (!text_2) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> text_2 is null")
     if (!text_3) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> text_3 is null")
     if (!color) throw new SyntaxError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> color is null")
-    if (!color.startsWith('#')) throw new ReferenceError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> color is not a hex")
+    if (!/^#[0-9A-F]{6}$/i.test(color) == true && !/^#([0-9A-F]{3}){1,2}$/i.test(color) == true) throw new ReferenceError("welcomeImage(background, avatar, text_1, text_2, text_3, color) ==> color is not a valid hex")
     let fonts;
     let attachmentName;
     let text1_fontSize;
