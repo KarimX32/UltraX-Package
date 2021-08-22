@@ -35,7 +35,7 @@ async function inviteLogger(client) {
                 const invite = guildInvites.find(i => {
                     const a = ei.get(i.code);
                     if (!a) return;
-                    return a.uses < i.uses
+                    return a
                 });
                 if (!invite) return;
                 // This is just to simplify the message being sent below (inviter doesn't have a tag property)
