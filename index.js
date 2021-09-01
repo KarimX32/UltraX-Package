@@ -35,7 +35,7 @@ module.exports = {
 /**
  * Connect to MongoDB Server
  * @param {String} MongoDBURI The MongoDB URI
- * @returns {Promise<void>}
+ * @returns {void}
  */
 function connectToMongoDB(MongoDBURI) {
     let connected = true;

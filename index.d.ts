@@ -25,11 +25,11 @@ export function bin(code: string): Promise<string>;
 
 export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>;
 
-export function connectToMongoDB(MongoDBURI: string): Promise<void>
+export function connectToMongoDB(MongoDBURI: string): void;
 
 export function daBaby(url: string): Promise<MessageAttachment>;
 
-export function docs(query: string, branch: string, )
+export function docs(query: string, branch: string, message: Message): Promise<void>;
 
 export function inviteLogger(client: Client): Promise<void>;
 
