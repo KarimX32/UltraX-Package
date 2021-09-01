@@ -30,7 +30,7 @@ To install UltraX package you need:
 
 - You need to install [**discord.js**](https://npmjs.com/package/discord.js).
 
-- You need to install [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin()`](https://npmjs.com/package/ultrax#welcomeImage) and [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) functions.
+- You need to install [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin()`](https://www.npmjs.com/package/ultrax#bin) and [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) functions.
 
 - You need to install [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage).
 
@@ -58,9 +58,9 @@ $ npm install ultrax
 
 -  [`remind()`](https://npmjs.com/package/ultrax#remind) - Function to make remind command 
 
--  [`daBaby()`](https://npmjs.com/package/ultrax#daBaby) - Function to make a user DaBaby
+-  [`daBaby()`](https://npmjs.com/package/ultrax#dababy) - Function to make a user DaBaby
 
-- [`boostImage()`](https://npmjs.com/package/ultrax#boostImage) - Function that creates a booster card.
+- [`boostImage()`](https://npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
 
 ### Events:
 
@@ -412,7 +412,7 @@ let avatar = user.displayAvatarURL()
 //            ^ change 'user' to the user that boosted the server 
 
 // Generating the booster card
-boostImage(avatar)
+let boostCard = await boostImage(avatar)
 
 
 
@@ -570,7 +570,7 @@ client.on('boost', async booster => {
 })
 ```
 
-> 🤫 | **PS:** You can use [boostImage()](https://npmjs.com/package/ultrax#boostImage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
+> 🤫 | **PS:** You can use [boostImage()](https://npmjs.com/package/ultrax#boostimage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
 
 ### Output:
 
