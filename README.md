@@ -67,7 +67,7 @@ $ npm install ultrax
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
 - [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) It Triggers when someone used remind function and its time to remind user. 
 
-- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://www.discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 <hr>
 <br>
@@ -197,7 +197,7 @@ await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
 ## welcomeImage
 This function is used to create a welcome image using [canvas](https://www.npmjs.com/package/canvas), fully customizable and fast!
 
-The function returns a [Promise(\<Attachment\>)](https://www.discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://www.discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
 
 ```js
 await  welcomeImage()
@@ -275,7 +275,7 @@ registerFont('ShadowsIntoLight-Regular.ttf', { family:  "Shadows Into Light" });
 <br>
 <br>
 
-After all these explanations and examples, lets see a full and nice welcome image function working inside of an [`guildMemberAdd`](https://www.discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event!
+After all these explanations and examples, lets see a full and nice welcome image function working inside of an [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event!
 
 **Example:**
 
@@ -362,7 +362,7 @@ res.fetch() // fetching the result from wikipedia
 
 Simple function to DaBaby a user!
 
-The function returns a [Promise(\<Attachment\>)](https://www.discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://www.discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
 
 ```js
 await  daBaby()
@@ -387,7 +387,7 @@ client.on("message", async(message) => {
 
 Function that creates a booster card.
 
-The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
+The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
 
 
 ### Parameter(s)
@@ -502,7 +502,7 @@ client.on('message'(message) => {
 
 ## Invite Logger Event
 
-This event is for logging invite uses. This is same as [`guildMemberAdd`](https://www.discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
+This event is for logging invite uses. This is same as [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
 
 - member
 - invite
@@ -531,7 +531,7 @@ console.log(`${member.user.tag} joined using invite code ${invite.code} from ${i
 
 ## Boost Event
 
-This event fires when the server is boosted and returns the booster as [GuildMember](https://www.discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 **Function:**
 
