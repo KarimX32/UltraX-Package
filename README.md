@@ -7,11 +7,11 @@
 <div align="center">
 <p>UltraX a unique package that gives you multiple useful usages using functions and events.</p>
 <p>
-    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://www.npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://www.img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/ultrax"><img src="https://www.img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
   </p>
   <p>
-<a  href="https://nodei.co/npm/ultrax/"><img  src="https://nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
+<a  href="https://nodei.co/npm/ultrax/"><img  src="https://www.nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
 
 </p>
 </div>
@@ -26,13 +26,13 @@
 
 To install UltraX package you need:
 
-- You need to install [**Node.js**](https://nodejs.org/en/download/).
+- You need to install [**Node.js**](https://www.nodejs.org/en/download/).
 
-- You need to install [**discord.js**](https://npmjs.com/package/discord.js).
+- You need to install [**discord.js**](https://www.npmjs.com/package/discord.js).
 
-- You need to install [**node-fetch**](https://npmjs.com/package/node-fetch) to use the [`Bin()`](https://www.npmjs.com/package/ultrax#bin) and [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) functions.
+- You need to install [**node-fetch**](https://www.npmjs.com/package/node-fetch) to use the [`Bin()`](https://www.npmjs.com/package/ultrax#bin) and [`Wikipedia()`](https://www.npmjs.com/package/ultrax#wikipedia) functions.
 
-- You need to install [**canvas**](https://npmjs.com/package/canvas) to use the [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage).
+- You need to install [**canvas**](https://www.npmjs.com/package/canvas) to use the [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage).
 
 Then you can open your application's terminal and type:
 
@@ -52,22 +52,22 @@ $ npm install ultrax
 
 -  [`ButtonPaginator()`](https://www.npmjs.com/package/ultrax#button-paginator) - Function to create embed pages using buttons easily.
 
--  [`welcomeImage()`](https://npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
+-  [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
 
--  [`Wikipedia()`](https://npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
+-  [`Wikipedia()`](https://www.npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
 
--  [`remind()`](https://npmjs.com/package/ultrax#remind) - Function to make remind command 
+-  [`remind()`](https://www.npmjs.com/package/ultrax#remind) - Function to make remind command 
 
--  [`daBaby()`](https://npmjs.com/package/ultrax#dababy) - Function to make a user DaBaby
+-  [`daBaby()`](https://www.npmjs.com/package/ultrax#dababy) - Function to make a user DaBaby
 
-- [`boostImage()`](https://npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
+- [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
 
 ### Events:
 
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
 - [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) It Triggers when someone used remind function and its time to remind user. 
 
-- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://www.discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 <hr>
 <br>
@@ -195,9 +195,9 @@ await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
   
 
 ## welcomeImage
-This function is used to create a welcome image using [canvas](https://npmjs.com/package/canvas), fully customizable and fast!
+This function is used to create a welcome image using [canvas](https://www.npmjs.com/package/canvas), fully customizable and fast!
 
-The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+The function returns a [Promise(\<Attachment\>)](https://www.discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://www.discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
 
 ```js
 await  welcomeImage()
@@ -268,14 +268,14 @@ const { registerFont } = require('canvas')
 registerFont('ShadowsIntoLight-Regular.ttf', { family:  "Shadows Into Light" });
 ```
 
-> To use custom fonts, you need to install the font (ttf/otf) yourself and use [`registerFont()`](https://github.com/Automattic/node-canvas#registerfont) to register the font and be able to use it.
+> To use custom fonts, you need to install the font (ttf/otf) yourself and use [`registerFont()`](https://www.github.com/Automattic/node-canvas#registerfont) to register the font and be able to use it.
 >
 >This is an example font, if you used this without install the font you will get an error.
 
 <br>
 <br>
 
-After all these explanations and examples, lets see a full and nice welcome image function working inside of an [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event!
+After all these explanations and examples, lets see a full and nice welcome image function working inside of an [`guildMemberAdd`](https://www.discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event!
 
 **Example:**
 
@@ -289,7 +289,7 @@ registerFont('ShadowsIntoLight-Regular.ttf', { family:  "Shadows Into Light" });
 // Event
 Client.on('guildMemberAdd', async  member  => {
 // defining the background as bg
-let  bg = 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png'
+let  bg = 'https://www.cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png'
 // defining the member's avatar with "PNG" as format.
 let  avatar = member.user.displayAvatarURL({ format:  "png" })
 // defining text_1 (title)
@@ -335,7 +335,7 @@ client.on("message", async(message) => {
 });
 ```
 ### Output
-![sussybaka](https://cdn.discordapp.com/attachments/838996367611396148/860983775415894057/sussybaka.png)
+![sussybaka](https://www.cdn.discordapp.com/attachments/838996367611396148/860983775415894057/sussybaka.png)
 ## wikipedia
 
 A simple function to allow you to fetch a topic from wikipedia
@@ -362,7 +362,7 @@ res.fetch() // fetching the result from wikipedia
 
 Simple function to DaBaby a user!
 
-The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
+The function returns a [Promise(\<Attachment\>)](https://www.discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://www.discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
 
 ```js
 await  daBaby()
@@ -381,13 +381,13 @@ client.on("message", async(message) => {
 });
 ```
 ### Output
-![Image](https://cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
+![Image](https://www.cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
 
 ## boostImage
 
 Function that creates a booster card.
 
-The function returns a [Promise(\<String\>)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
+The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://www.discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
 
 
 ### Parameter(s)
@@ -438,8 +438,8 @@ channel.send({ content: 'Booster Card!', files: [ img ] })
 // ^ change 'channel' to the channel you want he send the message to
 ```
 ### Output
-![Image](https://i.imgur.com/UgVTWda.png)
-![Image](https://i.imgur.com/yTrD8Uf.png)
+![Image](https://www.i.imgur.com/UgVTWda.png)
+![Image](https://www.i.imgur.com/yTrD8Uf.png)
 
 ## Remind
 Used in remind command.
@@ -502,7 +502,7 @@ client.on('message'(message) => {
 
 ## Invite Logger Event
 
-This event is for logging invite uses. This is same as [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
+This event is for logging invite uses. This is same as [`guildMemberAdd`](https://www.discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
 
 - member
 - invite
@@ -531,7 +531,7 @@ console.log(`${member.user.tag} joined using invite code ${invite.code} from ${i
 
 ## Boost Event
 
-This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+This event fires when the server is boosted and returns the booster as [GuildMember](https://www.discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
 **Function:**
 
@@ -570,11 +570,11 @@ client.on('boost', async booster => {
 })
 ```
 
-> 🤫 | **PS:** You can use [boostImage()](https://npmjs.com/package/ultrax#boostimage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
+> 🤫 | **PS:** You can use [boostImage()](https://www.npmjs.com/package/ultrax#boostimage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
 
 ### Output:
 
-![Image](https://i.imgur.com/ccrvBIf.png)
+![Image](https://www.i.imgur.com/ccrvBIf.png)
 
 <br>
 
@@ -584,4 +584,4 @@ client.on('boost', async booster => {
 
 In case you have idea's to improve the package, or maybe you found some bugs or you need help, you can contact us from our discord server!
 
-<a  href="https://discord.gg/Qk6j2fpeat"><img  src="https://discord.com/api/guilds/716216764769239083/widget.png?style=banner1"></a>
+<a  href="https://www.discord.gg/Qk6j2fpeat"><img  src="https://www.discord.com/api/guilds/716216764769239083/widget.png?style=banner1"></a>
