@@ -25,7 +25,7 @@
     "url": "git+https://github.com/KarimX32/UltraX-Package.git"
   },
   "dependencies": {
-    "discord.js": "^13.0.1",
+    "discord.js": "^13.2.0",
     "mongoose": "^5.13.2",
     "node-fetch": "^2.6.1"
   }

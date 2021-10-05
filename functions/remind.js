@@ -17,7 +17,7 @@ module.exports = async (memberID, time, reason) => {
     const data = new schema({
         memberID: (memberID),
         reason: (reason),
-        time: (ms(time) + Date.now()), //Illegal turn here btw
+        time: (parseInt(ms(time).toString()) + Date.now()), 
         timeMS: ms(time.toString())
     });
     data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
