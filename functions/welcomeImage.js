@@ -9,7 +9,7 @@ const Discord = require("discord.js");
  * @param {String} text_3 The footer
  * @param {String} color The color (hex code)
  * @param {Object | String} settings The attachment
- * @returns {Discord.MessageAttachment}
+ * @returns {Promise<Discord.MessageAttachment>}
  */
 module.exports = async function welcomeImage(background, avatar, text_1, text_2, text_3, color, settings) {
     try {
