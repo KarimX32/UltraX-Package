@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 class Wikipeida {
 
   /**
+   * @param {Object} options [REQUIRED] Options to apply
    * @param {Discord.Message} options.message The message
    * @param {String} [options.title] Title of the embed
    * @param {Discord.ColorResolvable} options.color Color of the embed 
