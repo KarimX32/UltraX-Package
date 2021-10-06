@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const token = require("./passGen")(5)
+const token = require("./passGen")(5);
+
 /**
  * A button paginator
  * @param {Discord.Message} message The main message content
@@ -7,7 +8,7 @@ const token = require("./passGen")(5)
  * @param {Discord.MessageButton[]} [buttons] An array of message components (buttons)
  * @param {Number} [time] The timeout
  */
-async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
+module.exports = async function ButtonPaginator(message, pages, buttons = [], time = 60000) {
     if (!message) throw new ReferenceError('EmbedPages => "message" is not defined')
     if (!pages || typeof pages !== 'object') throw new SyntaxError('EmbedPages => Invalid form body [pages]')
     const filter = (m) => {
@@ -66,5 +67,3 @@ collector.on('end', async () => {
 
 });
 };
-
-module.exports = ButtonPaginator;
