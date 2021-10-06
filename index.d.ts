@@ -23,6 +23,12 @@ export class Wikipedia {
 
 export function bin(code: string): Promise<string>;
 
+/**
+ * 
+ * @private
+ * @deprecated
+ * @ignore
+ */
 export function boost(client: Client, boostRoleID: Snowflake): Promise<void>;
 
 export function ButtonPaginator(message: Message, pages: MessageEmbed[], buttons?: MessageButton[], time?: number): Promise<void>;
@@ -45,9 +51,6 @@ export function welcomeImage(background: string, avatar: string, text_1?: string
 
 export function boostImage(url: string): Promise<string>;
 
-/**
- * @deprecated
- */
 export function start(client: Client, boostRoleID: Snowflake): Promise<void>;
 
 interface ButtonEmojiOptions {
