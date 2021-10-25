@@ -7,7 +7,6 @@ const Discord = require("discord.js")
  * @param {Discord.Snowflake} boostRoleID The ID of the booster role in the server
  * @returns {Promise<void>}
  */
-
 module.exports.start = async (client, boostRoleID) => {
     if (!client) throw new SyntaxError("Missing the parameter 'client'");
     if (!boostRoleID) throw new SyntaxError("Missing the parameter 'boostRoleID'");

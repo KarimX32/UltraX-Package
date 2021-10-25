@@ -6,6 +6,7 @@ try {
 /**
  * Bin a code
  * @param {String} code Code to be bin
+ * @param {Boolean} [edit=true] Whether the code is editable
  * @returns {Promise<String>}
  */
 module.exports = async (code, edit = true) => {
@@ -17,7 +18,7 @@ module.exports = async (code, edit = true) => {
     const params = (new(require("url").URLSearchParams)());
     params.append('content', code);
     params.append('edible', editable.toString());
-    if (edit === false) params.append('edible', 1);
+    if (edit === false) params.append('edible', 1); // Note to someone: param 'value' should be assign as string
     let a = await require("node-fetch")("https://pocket-inc.com/bin/api/create.php", {
         body: params,
         method: 'post'

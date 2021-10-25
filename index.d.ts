@@ -1,4 +1,4 @@
-import { Client, MessageAttachment, MessageEmbed, Message, ColorResolvable, Snowflake } from "discord.js";
+import { Client, MessageAttachment, MessageButton, MessageEmbed, Message, ColorResolvable, Snowflake } from "discord.js";
 
 /**
  * Code and detailed explanation for UltraX package
@@ -23,7 +23,15 @@ export class Wikipedia {
 
 export function bin(code: string): Promise<string>;
 
-export function ButtonPaginator(message: string, pages: MessageEmbed[], buttons?: ButtonOptions[], time?: number): Promise<void>;
+/**
+ * 
+ * @private
+ * @deprecated
+ * @ignore
+ */
+export function boost(client: Client, boostRoleID: Snowflake): Promise<void>;
+
+export function ButtonPaginator(message: Message, pages: MessageEmbed[], buttons?: MessageButton[], time?: number): Promise<void>;
 
 export function connectToMongoDB(MongoDBURI: string): void;
 
@@ -51,6 +59,9 @@ interface ButtonEmojiOptions {
     animated?: boolean;
 }
 
+/**
+ * @deprecated
+ */
 interface ButtonOptions {
     style: ButtonStyleOptions;
     label: string;
