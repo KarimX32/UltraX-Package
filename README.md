@@ -385,7 +385,7 @@ client.on("message", async(message) => {
 
 ## boostImage
 
-Function that creates a booster card.
+Function that creates a booster card, credit to [French Noodles](https://frenchnoodles.xyz/api).
 
 The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
 
