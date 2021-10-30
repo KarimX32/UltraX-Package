@@ -157,8 +157,8 @@ Button Paginator function allows you to create embed pages easily and fast.
 // Defining the package
 const  ultrax = require('ultrax')
 
-// getting the MessageEmbed from discord.js 
-const { MessageEmbed } = require("discord.js")
+// getting the MessageEmbed and MessageButton from discord.js 
+const { MessageEmbed, MessageButton } = require("discord.js")
 
 // creating embeds
 const  embed1 = new MessageEmbed()
@@ -170,26 +170,18 @@ const  embed3 = new MessageEmbed()
 const  embed4 = new MessageEmbed()
 .setTitle("4th page embed");
 
+const buttonBack = new MessageButton()
+.setStyle("DANGER")
+.setEmoji("◀")
+
+const buttonForward = new MessageButton()
+.setStyle("SUCCESS")
+.setEmoji("▶")
+
+
+
 // creating the buttons pages
-await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [{
-	style:  'red',
-	label:  'Backwards',
-	emoji: {
-		name:  '◀',
-		animated:  false
-		},
-	id:  'back'  // don't change this line
-	},
-	{
-	style:  'green',
-	label:  'Forward',
-	emoji: {
-		name:  '▶',
-		animated:  false
-		},
-	id:  'next'  // don't change this line
-	}
-]);
+await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [buttonBack, buttonForward]);
 ```
 > Don't change the id of the buttons otherwise, don't expect it to work.
   
