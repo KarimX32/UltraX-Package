@@ -21,7 +21,7 @@ module.exports = async function ButtonPaginator(message, pages, buttons = [], ti
     };
     let collector;
     const row = new Discord.MessageActionRow()
-		.addComponents(buttons);
+		.addComponents(buttons[0].setCustomId(`prev_${token}`), buttons[1].setCustomId(`next_${token}`));
     const msg = await message.reply({embeds: [pages[0]], components: [row]});
 
         collector = msg.channel.createMessageComponentCollector({ componentType: "BUTTON", filter, time, idle: Math.round(time/2), dispose: true });		
