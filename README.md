@@ -65,7 +65,7 @@ $ npm install ultrax
 
 - [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
 
-- [`shorten()`](https://www.npmjs.com/package/ultrax#en) - Function that creates a short url.
+- [`shorten()`](https://www.npmjs.com/package/ultrax#shorten) - Function that creates a short url.
 
 ### Events:
 
