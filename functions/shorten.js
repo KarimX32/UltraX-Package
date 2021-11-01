@@ -5,7 +5,7 @@ const Discord = require("discord.js");
  * @param {String} url the url
  * @returns {Promise<String>} returns the short url
  */
-module.exports = async function short(url) {
+module.exports = async function shorten(url) {
     return new Promise((resolve, reject) => {
         const TinyURL = require('tinyurl');
         try {
@@ -13,17 +13,18 @@ module.exports = async function short(url) {
         } catch (e) {
             throw new Error("[UltraX] => Cannot find module 'tinyurl' Please do ' npm i tinyurl@latest'");
         }
-        if (!url) throw new SyntaxError(`short =>  "No url provided"`);
-        if (typeof url != "string") throw new SyntaxError(`short => "the url it should be string"`);
-        if (!is_url) throw new ReferenceError(`short => the url must starts with http:// or https://`);
+        if (!url) throw new SyntaxError(`shorten =>  "No url provided"`);
+        if (typeof url != "string") throw new SyntaxError(`shorten => "the url it should be string"`);
+        if (!is_url) throw new ReferenceError(`shorten => the url must starts with http:// or https://`);
         TinyURL.shorten(url, function (res, error) {
             if (error || res == "Error") {
-                reject("short => Somthing Goes Wrong");
+                reject("shorten => Somthing Goes Wrong");
             }
             resolve(res)
         });
     });
 }
+
 
 
 

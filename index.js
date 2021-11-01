@@ -13,7 +13,7 @@ const sleep = require('./functions/sleep'),
     daBaby = require('./functions/daBaby'),
     boostImage = require('./functions/boostImage'),
     boost = require('./functions/boost'),
-    short = require("./functions/short")
+    shorten = require("./functions/shorten")
 
 _checkUpdate()
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
     daBaby,
     boostImage,
     boost,
-    short
+    shorten
 };
 
 /**

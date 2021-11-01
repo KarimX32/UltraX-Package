@@ -65,7 +65,7 @@ $ npm install ultrax
 
 - [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
 
-- [`short()`](https://www.npmjs.com/package/ultrax#short) - Function that creates a short url.
+- [`shorten()`](https://www.npmjs.com/package/ultrax#shorten) - Function that creates a short url.
 
 ### Events:
 
@@ -77,6 +77,7 @@ $ npm install ultrax
 <hr>
 <br>
 <br>
+
 # || Functions:
 
 ## sleep
@@ -354,6 +355,30 @@ const  res = new ultrax.Wikipedia({
 
 res.fetch() // fetching the result from wikipedia
 ```
+
+## shorten
+
+function let you short your url!
+
+**Example**
+```js
+//defining the package
+const ultrax = require('ultrax');
+
+client.on("message", async(message) => {
+	if(message.content === "!short"){
+		ultrax.shorten("https://www.youtube.com/c/UltraX1").then(res => {
+			return message.channel.send(res)
+		}).catch(err => console.log(err));
+	}
+});
+```
+### Output
+```
+https://tinyurl.com/yfrclqx5
+```
+
+
 ## daBaby
 
 Simple function to DaBaby a user!
@@ -384,6 +409,7 @@ client.on("message", async(message) => {
 Function that creates a booster card, credit to [French Noodles](https://frenchnoodles.xyz/api).
 
 The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
+
 
 
 ### Parameter(s)

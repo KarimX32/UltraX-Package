@@ -53,7 +53,7 @@ export function boostImage(url: string): Promise<string>;
 
 export function start(client: Client, boostRoleID: Snowflake): Promise<void>;
 
-export function short(url: string): Promise<String>;
+export function shorten(url: string): Promise<String>;
 
 interface ButtonEmojiOptions {
     id?: string,
