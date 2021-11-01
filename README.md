@@ -34,6 +34,9 @@ To install UltraX package you need:
 
 - You need to install [**canvas**](https://www.npmjs.com/package/canvas) to use the [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage).
 
+- You need to install [**tinyurl**](https://www.npmjs.com/package/tinyurl) to use the [`short()`](https://www.npmjs.com/package/ultrax#short).
+
+
 Then you can open your application's terminal and type:
 
 ```
@@ -62,6 +65,8 @@ $ npm install ultrax
 
 - [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
 
+- [`short()`](https://www.npmjs.com/package/ultrax#short) - Function that creates a short url.
+
 ### Events:
 
 - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
@@ -72,7 +77,6 @@ $ npm install ultrax
 <hr>
 <br>
 <br>
-
 # || Functions:
 
 ## sleep
