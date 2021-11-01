@@ -12,7 +12,8 @@ const sleep = require('./functions/sleep'),
     logger = require('./functions/logger'),
     daBaby = require('./functions/daBaby'),
     boostImage = require('./functions/boostImage'),
-    boost = require('./functions/boost')
+    boost = require('./functions/boost'),
+    short = require("./functions/short")
 
 _checkUpdate()
 module.exports = {
@@ -29,7 +30,8 @@ module.exports = {
     logger,
     daBaby,
     boostImage,
-    boost
+    boost,
+    short
 };
 
 /**
