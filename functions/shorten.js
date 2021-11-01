@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 
 /**
 * Create a short url for a Discord.js Bot
- * @param {String} url the url
- * @returns {Promise<String>} returns the short url
+ * @param {String} url The URL to be shorten
+ * @returns {Promise<String>} 
  */
 module.exports = async function shorten(url) {
     return new Promise((resolve, reject) => {
