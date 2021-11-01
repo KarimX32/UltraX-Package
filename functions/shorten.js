@@ -11,14 +11,14 @@ module.exports = async function shorten(url) {
         try {
             require.resolve("tinyurl");
         } catch (e) {
-            throw new Error("[UltraX] => Cannot find module 'tinyurl' Please do ' npm i tinyurl@latest'");
+            throw new Error("[UltraX] => Cannot find module 'tinyurl' Please run 'npm i tinyurl@latest'");
         }
-        if (!url) throw new SyntaxError(`shorten =>  "No url provided"`);
-        if (typeof url != "string") throw new SyntaxError(`shorten => "the url it should be string"`);
-        if (!is_url) throw new ReferenceError(`shorten => the url must starts with http:// or https://`);
+        if (!url) throw new SyntaxError(`Shorten =>  "No url provided"`);
+        if (typeof url != "string") throw new SyntaxError(`Shorten => "The url should be type string"`);
+        if (!is_url) throw new ReferenceError(`Shorten => The url must starts with http:// or https://`);
         TinyURL.shorten(url, function (res, error) {
             if (error || res == "Error") {
-                reject("shorten => Somthing Goes Wrong");
+                reject("Shorten => Somthing Goes Wrong");
             }
             resolve(res)
         });
