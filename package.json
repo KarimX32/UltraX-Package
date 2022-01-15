@@ -1,6 +1,6 @@
 {
   "name": "ultrax",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "description": "UltraX Package is a unique package that allows you to create cool things using simple functions and make it faster, for example there is an invite logger, discord buttons paginator, etc...",
   "main": "index.js",
   "scripts": {
