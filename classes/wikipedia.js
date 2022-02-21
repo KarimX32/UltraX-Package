@@ -34,8 +34,9 @@ class Wikipeida {
     } catch (e) {
       console.log('Something went wrong with Wikipedia search\n' + e)
     }
-    try {
-      if (response.type === 'disambiguation') {
+
+    if (response.type === 'disambiguation') {
+      try {
         const embed = new Discord.MessageEmbed()
           .setTitle(response.title)
           .setColor(this.color)
@@ -44,7 +45,12 @@ class Wikipeida {
           .setDescription(`${response.extract} Other Links for the same topic: [Click Me!](${response.content_urls.desktop.page}).`)
         if(this.message) this.message.channel.send({ embeds: [embed] })
         if(this.interaction) this.interaction.reply({ embeds: [embed] })
+        } catch (e) {
+        if(this.message) this.message.channel.send({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
+        if(this.interaction) this.interaction.reply({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
+      }
       } else {
+        try {
         const fullEmbed = new Discord.MessageEmbed()
           .setTitle(response.title)
           .setColor(this.color)
@@ -53,11 +59,11 @@ class Wikipeida {
           .setDescription(response.extract)
         if(this.message) this.message.channel.send({ embeds: [fullEmbed] })
         if(this.interaction) this.interaction.reply({ embeds: [fullEmbed] })
+        } catch (e) {
+        if(this.message) this.message.channel.send({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
+        if(this.interaction) this.interaction.reply({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
       }
-    } catch (e) {
-      if(this.message) this.message.channel.send({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
-      if(this.interaction) this.interaction.reply({ embeds: [new Discord.MessageEmbed().setDescription(`:x: | No results for ${this.query}`).setColor("RED")] })
-    }
+      }
   }
 }
 
