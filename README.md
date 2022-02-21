@@ -343,7 +343,10 @@ let  query = 'earth'
 
 // Inistigating the wikipedia class
 const  res = new ultrax.Wikipedia({ 
+	// You choose either message or interaction, not both
 	message:  message, // The message
+	interaction: interaction // The interaction
+	
 	color:  "RED", // Color of embed that will be sent
 	query:  query  // what the search query is
 })
