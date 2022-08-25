@@ -1,78 +1,51 @@
-const Discord = require("discord.js");
-const schema = require("./schema/remind");
-const ms = require("./non-public-functions/ms");
+const { Client } = require('discord.js'); // eslint-disable-line no-unused-vars
+const schema = require('./schema/remind');
+const ms = require('ms');
+const { TypeError, Error } = require('../classes/non-public-classes/Error');
 
 /**
- * Reminds a Guild Member
- * @param {Discord.Snowflake} memberID The ID of the member
- * @param {Number} time The reminder time
+ * Creates a reminder
+ * @param {import("discord.js").Snowflake} memberID The ID of the member
+ * @param {String|Number} time The reminder time
  * @param {String} reason The reminder
- * @returns {Promise<void>}
+ * @returns {void}
  */
-module.exports = async (memberID, time, reason) => {
-    if (!memberID) throw new Error('[UltraX] Error: Member is not defined in remind function')
-    if (!time) throw new Error('[UltraX] Error: Time is not defined in remind function')
-    if (!reason) throw new Error('[UltraX] Error: Reason is not defined in remind function')
-    if (!ms(time.toString())) throw new Error('[UltraX] Error: Time is invalid in remind function')
-    const data = new schema({
-        memberID: (memberID),
-        reason: (reason),
-        time: (parseInt(ms(time).toString()) + Date.now()), 
-        timeMS: ms(time.toString())
-    });
-    data.save().catch(e => console.log("[UltraX] Error: saving remind to db"))
+module.exports = (memberID, time, reason) => {
+	if (!memberID) throw new Error('MISSING_PARAMETER', "The parameter 'memberID' is missing");
+	if (!time) throw new Error('MISSING_PARAMETER', "The parameter 'time' is missing");
+	if (!reason) throw new Error('MISSING_PARAMETER', "The parameter 'reason' is missing");
+	if (typeof time === 'string' && !ms(time)) throw new Error('INVALID_PARAMETER', "The parameter 'time' is invalid");
+	if (typeof memberID !== 'string') throw new TypeError('PARAMETER_NOT_STRING', "The parameter 'memberID' must be a string");
+	if (typeof time !== 'string' && typeof time !== 'number') throw new TypeError('PARAMETER_NOT_STRING_NOR_NUMBER', "The parameter 'time' must be a string or number");
+	if (typeof reason !== 'string') throw new TypeError('PARAMETER_NOT_STRING', "The parameter 'reason' must be a string");
+
+	const data = new schema({
+		memberID: (memberID),
+		reason: (reason),
+		time: typeof time === 'number' ? time : ms(time),
+		timeMS: typeof time === 'number' ? time : ms(time),
+	});
+	data.save().catch((e) => { throw new Error('INTERNAL_ERROR', e); });
 };
 
 /**
- * Fetch and reminds a Guild Member
- * @param {Discord.Client} client Discord Client
- * @returns {Promise<void>}
+ * Initialize the event listener into the client
+ * @param {Client} client Discord Client
+ * @returns {void}
  */
-module.exports.startRemind = async (client) => {
-    if (!client) throw new Error('[UltraX] Error: Client is not defined in remind function')
-    setInterval(() => {
-        schema.find({}, function (err, docs) {
-            if (err) return console.log(err)
-            docs.forEach(async doc => {
-                if (doc.time <= Date.now()) {
-                    await schema.deleteOne(doc);
-                    await client.users.fetch(doc.memberID);
-                    client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await parseMS(doc.timeMS), doc.timeMS)
-                };
-            });
-        });
-    }, 10000); // 10000 milsec
-}
+module.exports.init = (client) => {
+	if (!client) throw new Error('MISSING_PARAMETER', "The parameter 'client' is missing");
 
-/**
- * Parse a ms
- * @param {number} ms 
- * @returns {Promise<String>}
- */
-async function parseMS(ms) {
-    if(typeof ms == "number"){
-        let seconds = ms / 1000,
-
-        days = seconds / 86400;
-    seconds = seconds % 86400
-
-    let hours = seconds / 3600;
-    seconds = seconds % 3600
-
-    let minutes = seconds / 60;
-    seconds = seconds % 60;
-
-    if (days) {
-        return `${days} day, ${hours} hours, ${minutes} minutes`
-    } else if (hours) {
-        return `${hours} hours, ${minutes} minutes, ${seconds} seconds`
-    } else if (minutes) {
-        return `${minutes} minutes, ${seconds} seconds`
-    }
-
-    return `${seconds} second(s)`
-    } else {
-        return null;
-    }
-    
+	setInterval(() => {
+		schema.find({}, function(err, docs) {
+			if (err) return console.log(err);
+			docs.forEach(async doc => {
+				if (doc.time <= Date.now()) {
+					await schema.deleteOne(doc);
+					await client.users.fetch(doc.memberID);
+					client.emit('reminder', client.users.cache.get(doc.memberID), doc.reason, await ms(doc.timeMS, { long: true }), doc.timeMS);
+				}
+			});
+		});
+	}, 10000);
 };
