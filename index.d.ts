@@ -1,57 +1,43 @@
 import { Client, MessageAttachment, MessageButton, MessageEmbed, Message, ColorResolvable, Snowflake } from "discord.js";
 
 /**
- * Code and detailed explanation for UltraX package
+ * Typings for UltraX package
  */
 declare module "ultrax";
-
-export class sussyBaka {
-
-    constructor(baka: string);
-
-    public get(): Promise<MessageAttachment>;
-
-}
 
 export class Wikipedia {
 
     constructor(options: WikipediaOptions);
 
-    public fetch(): Promise<void>;
+    public send(): Promise<void>;
 
 }
 
 export function bin(code: string): Promise<string>;
 
-/**
- * 
- * @private
- * @deprecated
- * @ignore
- */
-export function boost(client: Client, boostRoleID: Snowflake): Promise<void>;
-
-export function ButtonPaginator(message: Message, pages: MessageEmbed[], buttons?: MessageButton[], time?: number): Promise<void>;
+export function buttonPaginator(message: Message, pages: MessageEmbed[], buttons?: MessageButton[], time?: number): Promise<void>;
 
 export function connectToMongoDB(MongoDBURI: string): void;
 
-export function daBaby(url: string): Promise<MessageAttachment>;
+export function dababy(url: string): Promise<MessageAttachment>;
 
-export function docs(query: string, branch: string, message: Message): Promise<void>;
+export function inviteLogger.init(client: Client): void;
 
-export function inviteLogger(client: Client): Promise<void>;
+export function boost.init(client: Client): void;
 
-export function passGen(Length: number): string;
+export function reminder.init(client: Client): void;
 
-export function remind(memberID: Snowflake, time: string, reason: string): Promise<void>;
+export function passGen(length: number): string;
+
+export function remind(memberID: Snowflake, time: string, reason: string): void;
 
 export function sleep(milliseconds: number): Promise<void>;
 
-export function welcomeImage(background: string, avatar: string, text_1?: string, text_2?: string, text_3?: string, color?: string, settings?: WelcomeImageSettingOptions): Promise<MessageAttachment>;
+export function welcomeImage(background: string, avatar: string, title?: string, subtitle?: string, footer?: string, color?: string, settings?: WelcomeImageSettingsOptions): Promise<MessageAttachment>;
 
-export function boostImage(url: string): Promise<string>;
+export function boostImage(url: string): string;
 
-export function start(client: Client, boostRoleID: Snowflake): Promise<void>;
+export function sussybaka(url: String): Promise<MessageAttachment>;
 
 interface ButtonEmojiOptions {
     id?: string,
@@ -59,25 +45,16 @@ interface ButtonEmojiOptions {
     animated?: boolean;
 }
 
-/**
- * @deprecated
- */
-interface ButtonOptions {
-    style: ButtonStyleOptions;
-    label: string;
-    emoji?: ButtonEmojiOptions;
-    url?: string;
-    custom_id: string;
-    id?: ButtonIDOptions;
-}
-
-interface WelcomeImageSettingOptions {
+interface WelcomeImageSettingsOptions {
     font?: string;
-    attachtmentName?: string;
+    attachmentName?: string;
+    title_fontSize?: number;
+    subtitle_fontSize?: number;
+    footer_fontSize?: number;
 }
 
 interface WikipediaOptions {
-    message: Message;
+    reply: Message|any;
     title?: string;
     color: ColorResolvable;
     query: string;
