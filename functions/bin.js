@@ -1,29 +1,22 @@
-try {
-    require.resolve("node-fetch")
-} catch (e) {
-    throw new Error("[UltraX] => Cannot find module 'node-fetch' Please do ' npm i node-fetch@latest '")
-}
+const axios = require('axios').default;
+const { Error, TypeError } = require('../classes/non-public-classes/Error');
+
 /**
- * Bin a code
- * @param {String} code Code to be bin
- * @param {Boolean} [edit=true] Whether the code is editable
- * @returns {Promise<String>}
+ * Bin code in a SourceBin
+ * @param {String} code Code to put into the SourceBin
+ * @returns {Promise<String>} The URL of the SourceBin
  */
-module.exports = async (code, edit = true) => {
-    let editable = 1;
-    if (edit === false) editable = 0;
-    // replaces all '`' with air.
-    code = code.replace("```js", "").replace("```", "").replace("`", "");
-    // initilizes params from nodejs 'url' npm
-    const params = (new(require("url").URLSearchParams)());
-    params.append('content', code);
-    params.append('edible', editable.toString());
-    if (edit === false) params.append('edible', 1); // Note to someone: param 'value' should be assign as string
-    let a = await require("node-fetch")("https://pocket-inc.com/bin/api/create.php", {
-        body: params,
-        method: 'post'
-    }).then(r => {
-        return r.text()
-    });
-    return a;
-}
+module.exports = async (code) => {
+	if (!code) throw new Error('MISSING_PARAMETER', "The parameter 'code' is missing");
+	if (typeof code !== 'string') throw new TypeError('PARAMETER_NOT_STRING', "The parameter 'code' must be a string");
+
+	const a = await axios('https://sourceb.in/api/bins', {
+		method: 'POST',
+		data: {
+			files: [{
+				content: code,
+			}],
+		},
+	});
+	return `https://sourceb.in/${a.data.key}`;
+};
