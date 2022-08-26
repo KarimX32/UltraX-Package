@@ -14,9 +14,6 @@
   <a href="https://npmjs.org/package/prompts">
     <img src="https://img.shields.io/npm/dm/prompts.svg" alt="downloads" />
   </a>
-   <a href="https://packagephobia.now.sh/result?p=ultrax">
-    <img src="https://packagephobia.now.sh/badge?p=ultrax" alt="install size" />
-  </a>
 </p>
 
 <p align="center">
