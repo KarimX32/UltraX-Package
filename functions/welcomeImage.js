@@ -14,6 +14,7 @@ const Canvas = require('canvas');
  * @returns {Promise<MessageAttachment>}
  */
 module.exports = async function welcomeImage(background, avatar, title, subtitle, footer, color, settings) {
+	const Canvas = require('canvas');
 	if (!background) throw new Error('MISSING_PARAMETER', "The parameter 'background' is missing");
 	if (!background.endsWith('.png')) throw new Error('PARAMETER_NOT_PNG', "The parameter 'background' is not a PNG");
 	if (!avatar) throw new Error('MISSING_PARAMETER', "The parameter 'avatar' is missing");
