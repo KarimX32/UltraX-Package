@@ -1,6 +1,5 @@
 const { MessageAttachment } = require('discord.js');
 const { Error, TypeError } = require('../classes/non-public-classes/Error');
-const Canvas = require('canvas');
 
 /**
  * Create a sussybaka image from an image url
@@ -8,6 +7,7 @@ const Canvas = require('canvas');
  * @returns {Promise<MessageAttachment>} The image link
  */
 module.exports = async function sussybaka(url) {
+	const Canvas = require('canvas');
 	if (!url) throw new Error('MISSING_PARAMETER', "Parameter 'url' is missing");
 	if (typeof url !== 'string') throw new TypeError('INVALID_PARAMETER', "Parameter 'url' is not a string");
 	if (!url.endsWith('.png')) throw new Error('INVALID_IMAGE_FORMAT', 'The image must be a PNG.');
