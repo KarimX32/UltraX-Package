@@ -20,11 +20,7 @@ export function connectToMongoDB(MongoDBURI: string): void;
 
 export function dababy(url: string): Promise<MessageAttachment>;
 
-export function inviteLogger.init(client: Client): void;
-
-export function boost.init(client: Client): void;
-
-export function reminder.init(client: Client): void;
+export function init(client: Client): void;
 
 export function passGen(length: number): string;
 
