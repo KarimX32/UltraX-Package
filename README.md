@@ -1,582 +1,426 @@
-<div  align="center">
-<h1>UltraX</h1>
-</div>
-
-### ℹ️ || About 
-
-<div align="center">
-<p>UltraX a unique package that gives you multiple useful usages using functions and events.</p>
-<p>
-    <a href="https://npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/v/ultrax?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://npmjs.com/package/ultrax"><img src="https://img.shields.io/npm/dt/ultrax?maxAge=3600" alt="NPM downloads" /></a>
-  </p>
-  <p>
-<a  href="https://nodei.co/npm/ultrax/"><img  src="https://nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
-
+<p align="center">
+  <img src="./images/banner.png" alt="UltraX" width="500" />
 </p>
-</div>
 
+<h1 align="center">UltraX</h1>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/ultrax">
+    <img src="https://img.shields.io/npm/v/ultrax.svg" alt="version" />
+  </a>
+  <a href="https://www.npmjs.com/package/ultrax">
+    <img src="https://img.shields.io/github/workflow/status/UltraX32/UltraX-Package/npm-publish/main.svg" alt="build" />
+  </a>
+  <a href="https://npmjs.org/package/prompts">
+    <img src="https://img.shields.io/npm/dm/prompts.svg" alt="downloads" />
+  </a>
+   <a href="https://packagephobia.now.sh/result?p=ultrax">
+    <img src="https://packagephobia.now.sh/badge?p=ultrax" alt="install size" />
+  </a>
+</p>
 
+<p align="center">
+  <b>User-friendly functions and events that makes life easier</b>
+  <br />
+  <sub>UltraX is a unique package that gives you multiple useful usages using functions and events.</sub>
+</p>
 
+<p align="center">
+ <a  href="https://nodei.co/npm/ultrax/"><img  src="https://nodei.co/npm/ultrax.png?downloads=true&stars=true"  alt="NPM info"  /></a>
+ </p>
 
+![split](./images/split.png)
   
-
-## 📥 || Installation
-
-To install UltraX package you need:
-
-- You need to install [**Node.js**](https://www.nodejs.org/en/download/).
-
-- You need to install [**discord.js**](https://www.npmjs.com/package/discord.js).
-
-- You need to install [**node-fetch**](https://www.npmjs.com/package/node-fetch) to use the [`Bin()`](https://www.npmjs.com/package/ultrax#bin) and [`Wikipedia()`](https://www.npmjs.com/package/ultrax#wikipedia) functions.
-
-- You need to install [**canvas**](https://www.npmjs.com/package/canvas) to use the [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage).
-
-Then you can open your application's terminal and type:
+## ✘ Install
 
 ```
 $ npm install ultrax
 ```
 
-## 📜 || Table of content
+![split](./images/split.png)
 
-### functions:
+## ✘ Table of Content
 
--  [`sleep()`](https://www.npmjs.com/package/ultrax#sleep) - Functions that creates timeout easily and fast.
+- **Functions:**
 
--  [`passGen()`](https://www.npmjs.com/package/ultrax#passgen) - Function to create passwords made by letters and numbers randomly with specified length.
+  -  [`sleep()`](https://www.npmjs.com/package/ultrax#sleep) - A simple function that makes it easier to timeout in your code.
 
--  [`bin()`](https://www.npmjs.com/package/ultrax#bin) - Function that allows you to bin codes.
+  -  [`passGen()`](https://www.npmjs.com/package/ultrax#passgen) - Function to create passwords made by letters and numbers randomly with a specified length.
 
--  [`ButtonPaginator()`](https://www.npmjs.com/package/ultrax#button-paginator) - Function to create embed pages using buttons easily.
+  -  [`bin()`](https://www.npmjs.com/package/ultrax#bin) - Function to bin code into a [SourceBin](https://sourceb.in/).
 
--  [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage) - Function that creates a welcome image fully customizable using canvas.
+  -  [`buttonPaginator()`](https://www.npmjs.com/package/ultrax#buttonpaginator) - Function to create a paginator with buttons.
+  
+  -  [`welcomeImage()`](https://www.npmjs.com/package/ultrax#welcomeimage) - This function is used to create a welcome image using [canvas](https://www.npmjs.com/package/canvas), fully customizable and fast!
 
--  [`Wikipedia()`](https://www.npmjs.com/package/ultrax#wikipedia) - Function that allows users to search wikipedia and return results for a query.
+  - [`sussybaka()`](https://www.npmjs.com/package/ultrax#sussybaka) - Create a sussybaka image from an image url.
 
--  [`remind()`](https://www.npmjs.com/package/ultrax#remind) - Function to make remind command 
+  - [`dababy()`](https://www.npmjs.com/package/ultrax#dababy) - Create a dababy image from an image url.
 
--  [`daBaby()`](https://www.npmjs.com/package/ultrax#dababy) - Function to make a user DaBaby
+  -  [`wikipedia()`](https://www.npmjs.com/package/ultrax#wikipedia) - A simple function to allow you to fetch a topic from Wikipedia and send an embed with the information.
 
-- [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card.
+  - [`boostImage()`](https://www.npmjs.com/package/ultrax#boostimage) - Function that creates a booster card, using the [French Noodles API](https://frenchnoodles.xyz/api).
 
-### Events:
+  -  [`remind()`](https://www.npmjs.com/package/ultrax#remind) - Function to make remind command 
 
-- [`inviteJoin`](https://www.npmjs.com/package/ultrax#invite-logger-event) allows you to get some informations about the invite such as the inviter, etc...
-- [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) It Triggers when someone used remind function and its time to remind user. 
+- **Events:**
+  - [`reminder`](https://www.npmjs.com/package/ultrax#reminder-event) - This event fires when it's time to remind someone of a reminder created by the [Remind Function](https://www.npmjs.com/package/ultrax#remin).
+  
+  - [`inviteJoin`](https://www.npmjs.com/package/ultrax#invitelogger) - This event fires when a user joins by an invite link from another user, it provides information who joined, by what invite link and who made that invite link.
 
-- [`boost`](https://www.npmjs.com/package/ultrax#boost-event) This event emits when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
+  - [`boost`](https://www.npmjs.com/package/ultrax#boost-event) - This event emits when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
 
-<hr>
-<br>
-<br>
+![split](./images/split.png)
 
-# || Functions:
+## ✘ Functions:
 
-## sleep
+### sleep
 
-sleep is a simple function, where is make it easier and faster to make a timeout in your code.
-
-**Example:**
+A simple function that makes it easier to timeout in your code.
 
 ```js
-// Defining the package
-const  ultrax = require('ultrax')
+(async () => {
+  const  { sleep } = require('ultrax');
 
-// Getting the sleep function from the package
-const  sleep = ultrax.sleep
+  console.log('Started!'); // => Logs "Started!"
 
-// this will log "Start!" once i run the application
-console.log('Start!')
+  await sleep(2000); // => Waits 2 seconds
 
-// using the package sleep function to set a timeout
-sleep(5000) // sleep(milliseconds)
-
-// after the 5 seconds (5000 milliseconds) it will log "5 Seconds passed"
-console.log('5 Seconds passed')
+  console.log('Two seconds passed!'); // => Logs "Two seconds passed!"
+})();
 ```
 
-> sleep(ms: Number)
-## passGen
+> `sleep(ms: Number)`
 
-this is a simple function that can generate passwords using letters and numbers and the password length is custom so you can change it to any length you want!
+<br />
 
+### passGen
 
-**Example:**
+Function to create passwords made by letters and numbers randomly with a specified length.
 
 ```js
-// Defining the package
-const  ultrax = require('ultrax')
+const  { passGen } = require('ultrax');
 
-// getting the passGen function from the package
-const  passGen = ultrax.passGen
-
-// passGen(6) that mean it will generate a password from 6 characters.
-console.log(passGen(6)) 
+console.log(passGen(6));  // => NzA8YT
 ```
-> passGen(Length: Number)
 
-## Bin
+> `passGen(length: Number)`
 
-This function is used to bin your code.
+<br />
 
-**Example:**
+### bin
+
+Function to bin code into a [SourceBin](https://sourceb.in/).
 
 ```js
-// Defining the package
-const  ultrax = require('ultrax')
+(async () => {
+  const  { bin } = require('ultrax')
 
-// if it's empty it returns a message saying "what do you want to bin?"
-if (!args.join(' ')) return  message.channel.send('What do you want to bin?');
+  if (!args[0]) return message.channel.send('What do you want to bin?');
 
-// else if everything works fine, we will make a new varible called "bin"
-else {
+  const url = await bin(args.join(' '));
 
-// it will be used to bin the args.join(' ') also known as the message.content
-const  bin = await  ultrax.bin(args.join(' '), true);
-
-// then here we will send the results!
-console.log('Here i binned the code ' + bin)
-}
+  console.log(url) // => https://sourceb.in/bFD3tHt1vB
+})(); 
 ```
-> bin(String)
-`ultrax.bin(args.join(' '), true/false)` if its true that mean the bin is editable, else if its false that means no one can edit it.
 
-## Button Paginator
+> `bin(code: String)`
 
-Button Paginator function allows you to create embed pages easily and fast.
+<br />
 
-> Styles: `red`, `grey`, `blurple`, `green`, `url`
+### buttonPaginator
 
+Function to create a paginator with buttons.
 
 **Example:**
 
 ```js
-// Defining the package
-const  ultrax = require('ultrax')
+const { buttonPaginator } = require('ultrax');
+const { MessageEmbed, MessageButton } = require("discord.js");
 
-// getting the MessageEmbed and MessageButton from discord.js 
-const { MessageEmbed, MessageButton } = require("discord.js")
-
-// creating embeds
-const  embed1 = new MessageEmbed()
-.setTitle("1st page embed");
-const  embed2 = new MessageEmbed()
-.setTitle("2nd page embed");
-const  embed3 = new MessageEmbed()
-.setTitle("3rd page embed");
-const  embed4 = new MessageEmbed()
-.setTitle("4th page embed");
+const embed1 = new MessageEmbed()
+  .setTitle("1st page embed");
+const embed2 = new MessageEmbed()
+  .setTitle("2nd page embed");
+const embed3 = new MessageEmbed()
+  .setTitle("3rd page embed");
+const embed4 = new MessageEmbed()
+  .setTitle("4th page embed");
 
 const buttonBack = new MessageButton()
-.setStyle("DANGER")
-.setEmoji("◀")
+  .setStyle("DANGER")
+  .setEmoji("◀");
 
 const buttonForward = new MessageButton()
-.setStyle("SUCCESS")
-.setEmoji("▶")
+  .setStyle("SUCCESS")
+  .setEmoji("▶");
 
-
-
-// creating the buttons pages
-await  ultrax.ButtonPaginator(message, [embed1, embed2, embed3, embed4], [buttonBack, buttonForward]);
+await buttonPaginator(message, [embed1, embed2, embed3, embed4], [buttonBack, buttonForward]); // => Replies with a paginated embed to your message
 ```
-> Don't change the id of the buttons otherwise, don't expect it to work.
-  
+> `buttonPaginator(message: Message, embeds: MessageEmbed[], buttons: MessageButton[])`
 
-## welcomeImage
+
+<img src="./images/buttonPaginator.png" alt="buttonPaginator" width="199" />  
+
+<br />
+
+### welcomeImage
+
 This function is used to create a welcome image using [canvas](https://www.npmjs.com/package/canvas), fully customizable and fast!
 
-The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
-
-```js
-await  welcomeImage()
-```
-As we mentioned before its fully customizable, so lets see the parameters and the options available.
-**Parameters (Required)**:
-- background
-- avatar
-- text_1 (Title)
-- text_2 (Subtitle)
-- text_3 (Footer)
-- color
-**Options (Optional):**
-
--  `font` { default: "San Serif" }
--  `attachmentName` { default: "welcome" }
--  `text1_fontSize` { default: "72 pixels" }
--  `text2_fontSize` { default: "42 pixels" }
--  `text3_fontSize` { default: "32 pixels" }
-  
-
-<br>
-
- 
-
-So now lets talk about the correct Syntax for it!
-
-```js
-await  welcomeImage(background, avatar, text_1, text_2, text_3, color)
-```
-
-> The background must be a PNG image, local images and URL images are supported.
-
-
-> The color must be a HEX color's code.
-As example this HEX:[`#FFFFFF`](https://www.color-hex.com/color/ffffff)
-
-<br>
-
-In case you will use the options:
-> You don't have to use all options you can just use the ones you want to use, and you are not obligate of using them at all they are **optional**.
-
-```js
-await welcomeImage(background, avatar, text_1, text_2, text_3, color {
-	font: String, 
-	attachmentName: String,
-	text1_fontSize: Number,
-	text2_fontSize: Number,
-	text3_fontSize: Number
-})
-```
-
-> the `attachmentName` is always PNG, so whatever name you will put it will end with `.png` automatically.
-> 
-> Example:
-> attachmentName: "Hello"
-> returns: "Hello.png"
-
-  
-
 **Example:**
 
-```js
-// Getting registerFont() from canvas
-const { registerFont } = require('canvas')
-
-// Registering the font
-registerFont('ShadowsIntoLight-Regular.ttf', { family:  "Shadows Into Light" });
-```
-
-> To use custom fonts, you need to install the font (ttf/otf) yourself and use [`registerFont()`](https://www.github.com/Automattic/node-canvas#registerfont) to register the font and be able to use it.
->
->This is an example font, if you used this without install the font you will get an error.
-
-<br>
-<br>
-
-After all these explanations and examples, lets see a full and nice welcome image function working inside of an [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event!
-
-**Example:**
+A nice welcome image function working inside of a [guildMemberAdd](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event.
 
 ```js
-// defining the package
-const  ultrax = require('ultrax')
-// Getting registerFont() from canvas
-const { registerFont } = require('canvas')
-// Registering the custom font
-registerFont('ShadowsIntoLight-Regular.ttf', { family:  "Shadows Into Light" });
-// Event
-Client.on('guildMemberAdd', async  member  => {
-// defining the background as bg
-let  bg = 'https://www.cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png'
-// defining the member's avatar with "PNG" as format.
-let  avatar = member.user.displayAvatarURL({ format:  "png" })
-// defining text_1 (title)
-let  text1 = "welcome"
-// defining text_2 (subtitle)
-let  text2 = member.user.tag
-// defining text_3 (footer)
-let  text3 = `You're the ${member.guild.memberCount}th member`
-// defining the color, here its white
-let  color = '#ffffff'
-// defining the options and setting them (Those are optional)
-const  options = {
-	font:  "Shadows Into Light",
-	attachmentName:  `welcome-${member.id}`,
-	text1_fontSize: 80,
-	text2_fontSize: 50,
-	text3_fontSize: 30
-}
+const { welcomeImage } = require('ultrax');
 
-// creating the image
-const  image = await  ultrax.welcomeImage(bg, avatar, text1, text2, text3, color, options)
+client.on('guildMemberAdd', async member => {
+  const bg = 'https://imgur.com/okIR1iY.png';
+  const avatar = member.user.displayAvatarURL({ format: "png" });
+  const title = "welcome";
+  const subtitle = member.user.tag;
+  const footer = `You're the ${member.guild.memberCount}th member`;
+  const color = '#ffffff';
+  const channel = member.guild.channels.cache.get('716220553391767569')
+  const options = {
+    font: "sans-serif",
+    attachmentName: `welcome-${member.id}`,
+    title_fontSize: 80,
+    subtitle_fontSize: 50,
+    footer_fontSize: 30
+  };
 
-//channel#send(image)
+  const image = await welcomeImage(bg, avatar, title, subtitle, footer, color, options);
 
-});
-```
-## Sussybaka
-Makes a sussybaka image with a image url
-
-**Example**
-```js
-const ultrax = require("ultrax");
-const { Client } = require("discord.js");
-const client = new Client();
-
-client.on("message", async(message) => {
-	if(message.content === "!sussybaka"){
-    const theSussyBaka = new ultrax.sussyBaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
-	//It will return a Discord attachment!
-	const Image = await theSussyBaka.get();
-	return message.channel.send(Image);
-	}
-});
-```
-### Output
-![sussybaka](https://www.cdn.discordapp.com/attachments/838996367611396148/860983775415894057/sussybaka.png)
-## wikipedia
-
-A simple function to allow you to fetch a topic from wikipedia
-
-**Example**
-
-```js
-// defining the package
-const  ultrax = require('ultrax') 
-
-// we will be searching earth
-let  query = 'earth'
-
-// Inistigating the wikipedia class
-const  res = new ultrax.Wikipedia({ 
-	// You choose either message or interaction, not both
-	message:  message, // The message
-	interaction: interaction // The interaction
-	
-	color:  "RED", // Color of embed that will be sent
-	query:  query  // what the search query is
-})
-
-res.fetch() // fetching the result from wikipedia
-```
-## daBaby
-
-Simple function to DaBaby a user!
-
-The function returns a [Promise(\<Attachment\>)](https://discord.js.org/#/docs/main/stable/class/DataResolver?scrollTo=resolveFileAsBuffer) to Buffer the image and make it an [Attachment](https://discord.js.org/#/docs/main/stable/class/MessageAttachment), so you need to await it.
-
-```js
-await  daBaby()
-```
-
-**Example**
-```js
-//defining the package
-const ultrax = require('ultrax')
-client.on("message", async(message) => {
-	if(message.content === "!dababy"){
-    	const daBaby = await ultrax.dababy(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' 	   }));
-	//It will return a Discord attachment!
-	return message.channel.send(daBaby);
-	}
-});
-```
-### Output
-![Image](https://www.cdn.discordapp.com/attachments/840619319921737750/862354314986127400/DaBaby.png)
-
-## boostImage
-
-Function that creates a booster card, credit to [French Noodles](https://frenchnoodles.xyz/api).
-
-The function returns a [Promise(\<String\>)](https://www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) the output is a URL in the form of a String, so you can use it as a [MessageAttachement](https://discord.js.org/#/docs/main/13.0.1/class/MessageAttachment) or in the [.setImage()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setImage)/[.setThumbnail()](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed?scrollTo=setThumbnail) function in a [MessageEmbed](https://discord.js.org/#/docs/main/13.0.1/class/MessageEmbed).
-
-
-### Parameter(s)
-| Parameter | Description                                                                         | Type                    | Position |
-|-----------|-------------------------------------------------------------------------------------|-------------------------|----------|
-| url       | The image url of the booster!                                                       | string                  | 1        |
-
-```js
-boostImage(url)
-```
-
-**Example**
-```js
-// Defining the package
-const ultrax = require('ultrax')
-
-// Defining the function
-const boostImage = ultrax.boostImage
-
-// Defining the boosters avatar :
-let avatar = user.displayAvatarURL()
-//            ^ change 'user' to the user that boosted the server 
-
-// Generating the booster card
-let boostCard = await boostImage(avatar)
-
-
-
-
-// Send the boostImage in a embed
-const discord = require('discord.js')
-
-let embed = new discord.MessageEmbed()
-	.setTitle('Boost Card!')
-// To add boosterCard to .setImage() :
-	.setImage(boostCard)
-// To add boosterCard to .setThumbnail() :
-	.setThumbnail(boostCard)
-channel.send({ embeds: [embed] })
-// ^ change 'channel' to the channel you want he sends the embed to
-
-
-
-
-// Send boostImage in a message:
-
-channel.send({ content: 'Booster Card!', files: [ img ] })
-// ^ change 'channel' to the channel you want he send the message to
-```
-### Output
-![Image](https://www.i.imgur.com/UgVTWda.png)
-![Image](https://www.i.imgur.com/yTrD8Uf.png)
-
-## Remind
-Used in remind command.
-Parameters: 
-- MemberID
-- Time
-- Reason
-  
-**Example**
-```js
-const remind = require("ultrax").remind;
-const time = args[0];
-const reason = args.slice(1).join(" ");
-if (!time) return message.channel.send("Specify Time! e.g `1m`")
-if (!reason) return message.channel.send("Specify Reason! e.g `Going to Market`")
-remind(message.author.id, time, reason);
-message.channel.send("Successfully set a reminder.")
-```
-<br>
-
-# Events:
-## Reminder Event
-This will trigger when someone uses remind command ( [`remind function`](https://www.npmjs.com/package/ultrax#remind) ) And when its time to remind user his message, this will trgger. It has 3 parameters:
-
-- User
-- reason
-- time
-  
-**Example**
-```js
-const Discord = require("discord.js");
-const client = new Discord.Client();
-client.login('TOKEN HERE');
-// ==================================================================
-const ultrax = require("ultrax")
-// Connecting to mongoose'
-ultrax.connectToMongoDB('MONGO DB URL');
-// this will make reminder event work!
-ultrax.remind.startRemind(client);
-//================================================================
-// New Event for Remind function;
-client.on('reminder', (user, reason, time) => {
-	client.users.cache.get(user.id).send(`You asked me \`${time}\` ago to remind you \n \`${reason}\``);
-});
-
-client.on('message'(message) => {
-	let prefix = '?'
-	let args = message.content.slice(prefix.length).trim().split(/ +/g);
-	let cmd = args.shift().toLowerCase();
-	if (cmd === 'remind') {
-		const time = args[0];
-		const reason = args.slice(1).join(" ");
-		if (!time) return message.channel.send("Specify Time! e.g `1m`")
-		if (!reason) return message.channel.send("Specify Reason! e.g `Going to Market`")
-		remind(message.author.id, time, reason);
-  		 message.channel.send("Successfully set a reminder.")
-	};
+  channel.send({ files: [image] });
 });
 ```
 
-## Invite Logger Event
+> To use a custom font, you need to register your font, and give it a family name, after registering it, you can use the specified family name in the options.
+> More information about registering fonts can be found [here](https://www.npmjs.com/package/canvas#registerfont).
 
-This event is for logging invite uses. This is same as [`guildMemberAdd`](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-guildMemberAdd) event but this is custom event which has 3 parameters:
+<img src="./images/welcomeImage.png" alt="welcomeImage" width="399" />
 
-- member
-- invite
-- inviter
-
-**Example:**
-
-```js
-// Defining the package
-const  ultrax = require("ultrax")
-//defining discord
-const  discord = require('discord.js')
-// new discord client
-const  client = new  discord.Client()
-// To Get The new event working we need to initilize it by:
-ultrax.inviteLogger(client) 
-// now below event will work
-client.on('inviteJoin', (member, invite, inviter) => {
-// results
-console.log(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`)
-});
-```
-
-> `ultrax.inviteLogger(client) 
-` put here your discord client. without it, the event won't emit.
-
-## Boost Event
-
-This event fires when the server is boosted and returns the booster as [GuildMember](https://discord.js.org/#/docs/main/stable/class/GuildMember), with all data existing about it.
-
-**Function:**
-
-start(client, boosterRoleID)
+<br />
 
 **Parameters:**
 
-| Parameter     | Description                              | Type             | Position |
-|---------------|------------------------------------------|------------------|----------|
-| client        | The client object                        | object           | 1        |
-| BoosterRoleID | The ID of the booster role in the server | string/Snowflake | 2        |
+| Parameter  | Type                                                                                              | Optional | Description                          |
+| ---------- | ------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| background | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The background for the welcome image |
+| avatar     | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The avatar for the welcome image     |
+| title      | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The title for the welcome image      |
+| subtitle   | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The subtitle for the welcome image   |
+| footer     | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The footer for the welcome image     |
+| color      | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✘        | The color for the welcome image      |
+| options    | WelcomeImageSettingsOptions                                                                       | ✔        | The options for the welcome image    |
+
+> `welcomeImage(background: String, avatar: String, title: String, subtitle: String, footer: String, color: String, options: WelcomeImageSettingsOptions)`
+
+<br />
+
+**WelcomeImageSettingsOptions**
+
+| Parameter         | Type                                                                                              | Optional | Default    | Description                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------- | -------- | ---------- | ----------------------------------------------------------- |
+| font              | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✔        | sans-serif | The font for the text in the welcome image                  |
+| attachmentName    | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ✔        | welcome    | The name for the attachment that contains the welcome image |
+| title_fontSize    | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | ✔        | 72 pixels  | The title's font size for the welcome image                 |
+| subtitle_fontSize | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | ✔        | 42 pixels  | The subtitle's font size for the welcome image              |
+| footer_fontSize   | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | ✔        | 32 pixels  | The footer's font size for the welcome image                |
+
+> `{ font: String, attachmentName: String, title_fontSize: String, subtitle_fontSize: String, footer: String }`
+
+<br />
+
+### sussybaka
+
+Create a sussybaka image from an image url.
+
+**Example**
+```js
+const { sussybaka } = require("ultrax");
+
+client.on("messageCreate", async (message) => {
+  if (message.content === "!sussybaka") {
+    const image = await sussybaka(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
+
+    return message.channel.send({ files: [image] });
+  }
+});
+```
+
+> `sussybaka(url: String)`
+
+<img src="./images/sussybaka.png" alt="sussybaka" width="199" />
+
+<br />
+
+### dababy
+
+Create a dababy image from an image url.
+
+**Example**
+
+```js
+const { dababy } = require('ultrax');
+
+client.on("messageCreate", async (message) => {
+  if (message.content === "!dababy") {
+    const image = await dababy(message.mentions.users.first()?.displayAvatarURL({ format: 'png' }) || message.author.displayAvatarURL({ format: 'png' }));
+
+    return message.channel.send({ files: [image] });
+  }
+});
+```
+
+> `dababy(url: String)`
+
+<img src="./images/dababy.png" alt="dababy" width="199" />
+
+<br />
+
+### wikipedia
+
+A simple function to allow you to fetch a topic from Wikipedia and send an embed with the information.
+
+**Example**
+
+```js
+const { Wikipeda } = require('ultrax') 
+
+let query = 'earth'
+
+const res = new Wikipedia({ 
+	reply: message, // Use 'interaction' instead for any interaction based commands
+	color: "RED",
+	query: query
+});
+
+await res.send();
+```
+
+> `new Wikipedia({ message|interaction: Message, interaction: CommandInteraction, color: String, query: String })`
+
+<img src="./images/wikipedia.png" alt="wikipedia" width="399" />
+
+<br />
+
+### boostImage
+
+Function that creates a booster card, using the [French Noodles API](https://frenchnoodles.xyz/api).
+
+**Example**
+
+A nice boost image function working inside of the [Boost Event]([https://npmjs.](https://www.npmjs.com/package/ultrax#boost-event)).
+
+```js
+const { MessageEmbed } = require('discord.js');
+const { boostImage, boost } = require('ultrax');
+boost.init(client);
+
+client.on('boost', async (booster) => {
+  const channel = client.channels.cache.get('716239290350436423');
+  const avatar = booster.user.displayAvatarURL({ format: 'png' });
+  const boostCard = boostImage(avatar);
+
+  let embed = new MessageEmbed()
+    .setDescription(`${booster.user.toString()} boosted the server!`)
+    .setImage(boostCard)
+    .setColor('#FF39F8');
+  channel.send({ embeds: [embed] });
+});
+```
+
+> `boostImage(avatar: String)`
+
+<img src="./images/boostImage.png" alt="boost" width="399" />
+
+<br />
+
+### remind
+
+Function to create a reminder, to actually triger something after the reminder triggers use the [Reminder Event](https://www.npmjs.com/package/ultrax#reminder-event).
+  
+**Example**
+```js
+const { remind } = require("ultrax");
+
+const time = args[0];
+const reason = args.slice(1).join(" ");
+
+if (!time) return message.channel.send("Over how long do you want to be reminded?");
+if (!reason) return message.channel.send("What do you want me to remind you of?");
+
+remind(message.author.id, time, reason);
+message.channel.send("Successfully set a reminder.");
+```
+
+![split](./images/split.png)
+
+# ✘ Events
+## Reminder Event
+
+This event fires when it's time to remind someone of a reminder created by the [Remind Function](https://www.npmjs.com/package/ultrax#remind).
+  
+**Example**
+
+```js
+const { reminder, connectToMongoDB } = require("ultrax")
+connectToMongoDB('MONGO DB URL');
+remind.init(client);
+
+client.on('reminder', (userId, reason, time) => {
+	const user = client.users.cache.get(userId);
+  user.send(`You asked me \`${time}\` ago to remind you of: \`${reason}\``);
+});
+```
+
+> `connectToMongoDB(url: String)`
+> `remind.init(client: Client)`
+
+## inviteLogger
+
+This event fires when a user joins by an invite link from another user, it provides information who joined, by what invite link and who made that invite link.
 
 **Example:**
 
-
 ```js
-// Defining Discord.js
-const discord = require('discord.js')
+const { inviteLogger } = require("ultrax");
+inviteLogger.init(client);
 
-// Making your Client
-const client = new Discord.Client({ intents: [ Discord.Intents.FLAGS.your_intents ... ] })
-
-// Defining the package
-const ultrax = require('ultrax')
-
-// Import the event to your client and pass the booster role ID.
-ultrax.boost.start(client, '12345678910111213141516') // <- the id of your BoostRole
-
-// Make the event
-client.on('boost', async booster => {
-	// Define your boost channel
-	const boostchannel = client.channels.cache.get('12345678910111213141516') // <- the id of your BoostChannel
-
-	// Send message to your boostchannel
-	boostchannel.send({ content: `${booster} boosted the server!` })
-})
+client.on('inviteJoin', (member, invite, inviter) => {
+  console.log(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} time(s) since its creation.`); // => Iliannnn#0001 joined using the invite code Dx7aRg7Q from UltraX#0001. Invite was used 1 time(s) since its creation.
+});
 ```
 
-> 🤫 | **PS:** You can use [boostImage()](https://www.npmjs.com/package/ultrax#boostimage) to add a nice image to your embed/message <br> ( booster.user.displayAvatarURL() returns the avatar of the booster )
+> `inviteLogger.init(client)` 
 
-### Output:
+## Boost Event
 
-![Image](https://www.i.imgur.com/ccrvBIf.png)
+This event fires when a user boosts the server and it provides information about the user who boosted the server, you can make you're boost message a bit more interesting using the [boostImage Function](https://www.npmjs.com/package/ultrax#boostimage).
 
-<br>
+**Function:**
 
------
 
-## ⎝🔶⎠ Contact us
+**Example:**
 
-In case you have idea's to improve the package, or maybe you found some bugs or you need help, you can contact us from our discord server!
+```js
+const { boost } = require('ultrax');
+boost.init(client);
+
+client.on('boost', async (booster) => {
+	const boostChannel = client.channels.cache.get('716239290350436423');
+
+	boostChannel.send({ content: `${booster} boosted the server!` });
+});
+```
+
+![split](./images/split.png)
+
+# ✘ Contact us
+
+In case you have idea's to improve the package, or maybe you found some bugs or you need help, you can contact us in our Discord server!
 
 <a  href="https://www.discord.gg/Qk6j2fpeat"><img  src="https://www.discord.com/api/guilds/716216764769239083/widget.png?style=banner1"></a>

@@ -3,5 +3,4 @@ config.json
 package-lock-json
 .jsdoc.json
 /docs
-
 tsconfig.json
