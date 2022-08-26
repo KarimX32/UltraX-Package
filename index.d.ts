@@ -6,7 +6,6 @@ import { Client, MessageAttachment, MessageButton, MessageEmbed, Message, ColorR
 declare module "ultrax";
 
 export class Wikipedia {
-
     constructor(options: WikipediaOptions);
 
     public send(): Promise<void>;
@@ -15,7 +14,7 @@ export class Wikipedia {
 
 export function bin(code: string): Promise<string>;
 
-export function buttonPaginator(message: Message, pages: MessageEmbed[], buttons?: MessageButton[], time?: number): Promise<void>;
+export function buttonPaginator(message: Message, pages: MessageEmbed[], buttons: MessageButton[], time?: number): Promise<void>;
 
 export function connectToMongoDB(MongoDBURI: string): void;
 
