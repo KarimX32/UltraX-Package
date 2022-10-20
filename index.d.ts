@@ -9,7 +9,7 @@ export class Wikipedia {
     constructor(options: WikipediaOptions);
 
     public send(): Promise<void>;
-
+    public random(): Promise<void>;
 }
 
 export function bin(code: string): Promise<string>;

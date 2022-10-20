@@ -50,6 +50,22 @@ class Wikipedia {
 			}
 		}
 	}
+	async random() {
+		const url = 'https://en.wikipedia.org/api/rest_v1/page/random/summary';
+		let response; 
+		try {
+			response = await axios(url);
+		} catch(e) {
+			throw new Error("INTERNAL ERROR :", e)
+		};
+		if(response.data.type === 'standard') {
+			try {
+				this.reply.reply({ embeds: [new MessageEmbed().setTitle(response.data.title).setColor(this.color).setURL(response.data.content_urls.desktop.page).setThumbnail(response.data.thumbnail.source).setDescription(response.data.extract).setFooter({ text: `Posted in : ${response.data.timestamp}, Language : ${response.data.lang}`})]})
+			} catch(e) {
+				this.reply.reply({ embeds: [new MessageEmbed().setDescription(`An Error Occured.`).setColor('RED')] })
+			}
+		}
+	}
 }
 
 module.exports = Wikipedia;
